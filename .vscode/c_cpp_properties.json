@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "compilerPathInCppPropertiesJson": "/usr/bin/clang",
+            "includePath": [
+                "/home/atharvmane/cudaTorchSIFT/**",
+                "/usr/include/opencv4",
+                "/home/atharvmane/libtorch/include",
+                "/usr/local/cuda-12.1/include",
+                "/home/atharvmane/libtorch/include/torch/csrc/api/include"
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64",
+            "mergeConfigurations": false,
+            "compilerPath": "/usr/bin/clang",
+            "browse": {
+                "path": [
+                    "/home/atharvmane/cudaTorchSIFT"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}

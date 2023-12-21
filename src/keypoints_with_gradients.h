@@ -1,0 +1,3 @@
+#include <torch/torch.h>
+torch::Tensor keypointsWithGradients(at::Tensor keypoints, at::Tensor gaussGradMags, at::Tensor gaussGradDirs, int granularity, double initialSigma, double scaleFactor, int numIntervals);
+__global__ void keyPointsWithGradientsCUDA(cudaPitchedPtr devPitchedPtr, torch::PackedTensorAccessor64<double,2> directionHistogramAccessor, torch::PackedTensorAccessor64<double,1> radiusAccessor, torch::PackedTensorAccessor64<double,2> keypointAccessor, torch::PackedTensorAccessor64<double,3> gradMagsAccessor, torch::PackedTensorAccessor64<int,3> gradDirsAccessor, int xLim, int yLim);

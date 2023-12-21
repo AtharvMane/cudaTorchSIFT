@@ -1,0 +1,2 @@
+/usr/bin/ar qc libkpsCUDA.a CMakeFiles/kpsCUDA.dir/src/keypoints_with_gradients.cu.o
+/usr/bin/ranlib libkpsCUDA.a
