@@ -36,10 +36,17 @@ torch::Tensor keypointsWithGradients(at::Tensor keypoints, at::Tensor gaussGradM
     torch::PackedTensorAccessor64<double,3> gradMagsAccessor = gaussGradMags.packed_accessor64<double,3>();
     torch::PackedTensorAccessor64<int,3> gradDirsAccessor = gaussGradDirs.packed_accessor64<int,3>(); 
     cudaDeviceSynchronize();
-    keyPointsWithGradientsCUDA<<<1, keypoints.size(0)>>>(devPitchedPtr, directionHistogramAccessor, radiusAccessor, keypointAccessor, gradMagsAccessor, gradDirsAccessor, gaussGradMags.size(2),gaussGradMags.size(1));
-    cudaDeviceSynchronize();
-    
+    createWeightTiles<<<1, keypoints.size(0)>>>(keypoints.size(0), devPitchedPtr, directionHistogramAccessor, radiusAccessor, keypointAccessor, gradMagsAccessor, gradDirsAccessor, gaussGradMags.size(2),gaussGradMags.size(1));
     cudaError_t err = cudaGetLastError();
-    
+    if(err!=cudaSuccess){
+        printf("%s\n",cudaGetErrorString(err));
+    }
+    cudaDeviceSynchronize();
+    createHistogram<<<1, keypoints.size(0)>>>(devPitchedPtr, directionHistogramAccessor, radiusAccessor, keypointAccessor, gradMagsAccessor, gradDirsAccessor);
+    err = cudaGetLastError();
+    if(err!=cudaSuccess){
+        printf("%s\n",cudaGetErrorString(err));
+    }
+    cudaDeviceSynchronize();
     return directionHistogram;
 }

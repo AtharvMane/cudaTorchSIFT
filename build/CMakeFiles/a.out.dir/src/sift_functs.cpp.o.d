@@ -198,31 +198,28 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: \
  /home/atharvmane/libtorch/include/c10/util/irange.h \
  /home/atharvmane/libtorch/include/c10/util/TypeSafeSignMath.h \
  /usr/local/cuda-12.1/include/cuda.h /usr/include/c++/9/stdlib.h \
- /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/torch.h \
- /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/all.h \
- /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/autograd.h \
- /home/atharvmane/libtorch/include/torch/csrc/autograd/autograd.h \
- /home/atharvmane/libtorch/include/torch/csrc/autograd/variable.h \
- /home/atharvmane/libtorch/include/torch/csrc/utils/python_stub.h \
- /home/atharvmane/libtorch/include/torch/csrc/Export.h \
- /home/atharvmane/libtorch/include/torch/csrc/autograd/cpp_hook.h \
- /home/atharvmane/libtorch/include/torch/csrc/autograd/function_hook.h \
- /home/atharvmane/libtorch/include/ATen/Tensor.h \
- /home/atharvmane/libtorch/include/ATen/core/Tensor.h \
- /home/atharvmane/libtorch/include/ATen/core/TensorBody.h \
+ /home/atharvmane/libtorch/include/c10/cuda/CUDACachingAllocator.h \
+ /home/atharvmane/libtorch/include/c10/core/Allocator.h \
  /home/atharvmane/libtorch/include/c10/core/Device.h \
  /home/atharvmane/libtorch/include/c10/core/DeviceType.h \
- /home/atharvmane/libtorch/include/c10/core/Layout.h \
- /home/atharvmane/libtorch/include/c10/core/Backend.h \
- /home/atharvmane/libtorch/include/c10/core/DispatchKey.h \
- /home/atharvmane/libtorch/include/c10/core/DispatchKeySet.h \
+ /home/atharvmane/libtorch/include/c10/util/ThreadLocalDebugInfo.h \
+ /home/atharvmane/libtorch/include/c10/util/UniqueVoidPtr.h \
+ /home/atharvmane/libtorch/include/c10/core/StorageImpl.h \
+ /home/atharvmane/libtorch/include/c10/core/SymInt.h \
+ /home/atharvmane/libtorch/include/c10/core/SymBool.h \
+ /home/atharvmane/libtorch/include/c10/core/SymNodeImpl.h \
+ /home/atharvmane/libtorch/include/c10/util/ArrayRef.h \
+ /home/atharvmane/libtorch/include/c10/util/Deprecated.h \
+ /home/atharvmane/libtorch/include/c10/util/SmallVector.h \
+ /home/atharvmane/libtorch/include/c10/util/AlignOf.h \
+ /home/atharvmane/libtorch/include/c10/util/Optional.h \
  /home/atharvmane/libtorch/include/c10/util/Metaprogramming.h \
  /home/atharvmane/libtorch/include/c10/util/Array.h \
  /home/atharvmane/libtorch/include/c10/util/TypeList.h \
  /home/atharvmane/libtorch/include/c10/util/TypeTraits.h \
- /home/atharvmane/libtorch/include/c10/util/llvmMathExtras.h \
- /home/atharvmane/libtorch/include/c10/util/bit_cast.h \
- /usr/include/c++/9/climits \
+ /home/atharvmane/libtorch/include/c10/util/intrusive_ptr.h \
+ /home/atharvmane/libtorch/include/c10/util/MaybeOwned.h \
+ /usr/include/c++/9/atomic /usr/include/c++/9/climits \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -230,8 +227,20 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
- /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/c++/9/cmath \
- /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/c++/9/numeric \
+ /usr/include/c++/9/bits/stl_numeric.h \
+ /usr/include/c++/9/pstl/glue_numeric_defs.h \
+ /home/atharvmane/libtorch/include/c10/core/impl/PyObjectSlot.h \
+ /home/atharvmane/libtorch/include/c10/core/impl/HermeticPyObjectTLS.h \
+ /home/atharvmane/libtorch/include/c10/core/impl/PyInterpreter.h \
+ /home/atharvmane/libtorch/include/c10/core/Layout.h \
+ /home/atharvmane/libtorch/include/c10/core/Backend.h \
+ /home/atharvmane/libtorch/include/c10/core/DispatchKey.h \
+ /home/atharvmane/libtorch/include/c10/core/DispatchKeySet.h \
+ /home/atharvmane/libtorch/include/c10/util/llvmMathExtras.h \
+ /home/atharvmane/libtorch/include/c10/util/bit_cast.h \
+ /usr/include/c++/9/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
@@ -253,12 +262,43 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: \
  /usr/include/c++/9/tr1/poly_laguerre.tcc \
  /usr/include/c++/9/tr1/riemann_zeta.tcc \
  /home/atharvmane/libtorch/include/c10/core/MemoryFormat.h \
- /home/atharvmane/libtorch/include/c10/util/ArrayRef.h \
- /home/atharvmane/libtorch/include/c10/util/Deprecated.h \
- /home/atharvmane/libtorch/include/c10/util/SmallVector.h \
- /home/atharvmane/libtorch/include/c10/util/AlignOf.h \
- /home/atharvmane/libtorch/include/c10/core/QScheme.h \
+ /home/atharvmane/libtorch/include/c10/core/SymIntArrayRef.h \
+ /home/atharvmane/libtorch/include/c10/util/python_stub.h \
+ /home/atharvmane/libtorch/include/c10/cuda/CUDAGraphsC10Utils.h \
+ /home/atharvmane/libtorch/include/c10/cuda/CUDAStream.h \
+ /usr/local/cuda-12.1/include/cuda_runtime_api.h \
+ /usr/local/cuda-12.1/include/crt/host_defines.h \
+ /usr/local/cuda-12.1/include/builtin_types.h \
+ /usr/local/cuda-12.1/include/device_types.h \
+ /usr/local/cuda-12.1/include/driver_types.h \
+ /usr/local/cuda-12.1/include/vector_types.h \
+ /usr/local/cuda-12.1/include/surface_types.h \
+ /usr/local/cuda-12.1/include/texture_types.h \
+ /usr/local/cuda-12.1/include/cuda_device_runtime_api.h \
+ /home/atharvmane/libtorch/include/c10/core/DeviceGuard.h \
+ /home/atharvmane/libtorch/include/c10/core/impl/InlineDeviceGuard.h \
+ /home/atharvmane/libtorch/include/c10/core/impl/DeviceGuardImplInterface.h \
  /home/atharvmane/libtorch/include/c10/core/Stream.h \
+ /home/atharvmane/libtorch/include/c10/util/Registry.h \
+ /home/atharvmane/libtorch/include/c10/util/Type.h \
+ /home/atharvmane/libtorch/include/c10/core/impl/VirtualGuardImpl.h \
+ /home/atharvmane/libtorch/include/c10/cuda/CUDAFunctions.h \
+ /home/atharvmane/libtorch/include/c10/core/impl/GPUTrace.h \
+ /usr/include/c++/9/set /usr/include/c++/9/bits/stl_tree.h \
+ /usr/include/c++/9/bits/stl_set.h /usr/include/c++/9/bits/stl_multiset.h \
+ /usr/include/c++/9/unordered_set /usr/include/c++/9/bits/unordered_set.h \
+ /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/torch.h \
+ /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/all.h \
+ /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/autograd.h \
+ /home/atharvmane/libtorch/include/torch/csrc/autograd/autograd.h \
+ /home/atharvmane/libtorch/include/torch/csrc/autograd/variable.h \
+ /home/atharvmane/libtorch/include/torch/csrc/Export.h \
+ /home/atharvmane/libtorch/include/torch/csrc/autograd/cpp_hook.h \
+ /home/atharvmane/libtorch/include/torch/csrc/autograd/function_hook.h \
+ /home/atharvmane/libtorch/include/ATen/Tensor.h \
+ /home/atharvmane/libtorch/include/ATen/core/Tensor.h \
+ /home/atharvmane/libtorch/include/ATen/core/TensorBody.h \
+ /home/atharvmane/libtorch/include/c10/core/QScheme.h \
  /home/atharvmane/libtorch/include/c10/core/Scalar.h \
  /home/atharvmane/libtorch/include/c10/core/OptionalRef.h \
  /home/atharvmane/libtorch/include/c10/core/ScalarType.h \
@@ -282,15 +322,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: \
  /home/atharvmane/libtorch/include/c10/util/quint4x2.h \
  /home/atharvmane/libtorch/include/c10/util/quint8.h \
  /home/atharvmane/libtorch/include/c10/core/SymFloat.h \
- /home/atharvmane/libtorch/include/c10/core/SymBool.h \
- /home/atharvmane/libtorch/include/c10/core/SymNodeImpl.h \
- /home/atharvmane/libtorch/include/c10/util/Optional.h \
- /home/atharvmane/libtorch/include/c10/util/intrusive_ptr.h \
- /home/atharvmane/libtorch/include/c10/util/MaybeOwned.h \
- /usr/include/c++/9/atomic \
- /home/atharvmane/libtorch/include/c10/core/SymInt.h \
- /usr/include/c++/9/numeric /usr/include/c++/9/bits/stl_numeric.h \
- /usr/include/c++/9/pstl/glue_numeric_defs.h \
  /home/atharvmane/libtorch/include/c10/util/TypeCast.h \
  /home/atharvmane/libtorch/include/c10/core/ScalarTypeToTypeMeta.h \
  /home/atharvmane/libtorch/include/c10/util/typeid.h \
@@ -299,14 +330,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: \
  /home/atharvmane/libtorch/include/c10/util/ConstexprCrc.h \
  /usr/include/c++/9/cinttypes /usr/include/inttypes.h \
  /home/atharvmane/libtorch/include/c10/core/Storage.h \
- /home/atharvmane/libtorch/include/c10/core/StorageImpl.h \
- /home/atharvmane/libtorch/include/c10/core/Allocator.h \
- /home/atharvmane/libtorch/include/c10/util/ThreadLocalDebugInfo.h \
- /home/atharvmane/libtorch/include/c10/util/UniqueVoidPtr.h \
- /home/atharvmane/libtorch/include/c10/core/impl/PyObjectSlot.h \
- /home/atharvmane/libtorch/include/c10/core/impl/HermeticPyObjectTLS.h \
- /home/atharvmane/libtorch/include/c10/core/impl/PyInterpreter.h \
- /home/atharvmane/libtorch/include/c10/core/SymIntArrayRef.h \
  /home/atharvmane/libtorch/include/c10/core/TensorImpl.h \
  /home/atharvmane/libtorch/include/c10/core/InferenceMode.h \
  /home/atharvmane/libtorch/include/c10/core/AutogradState.h \
@@ -315,8 +338,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: \
  /home/atharvmane/libtorch/include/c10/core/impl/SizesAndStrides.h \
  /home/atharvmane/libtorch/include/c10/util/DimVector.h \
  /home/atharvmane/libtorch/include/c10/util/Flags.h \
- /home/atharvmane/libtorch/include/c10/util/Registry.h \
- /home/atharvmane/libtorch/include/c10/util/Type.h \
  /home/atharvmane/libtorch/include/c10/util/accumulate.h \
  /home/atharvmane/libtorch/include/c10/util/safe_numerics.h \
  /home/atharvmane/libtorch/include/c10/core/UndefinedTensorImpl.h \
@@ -770,7 +791,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: \
  /usr/include/c++/9/bits/locale_conv.h \
  /usr/include/c++/9/bits/quoted_string.h \
  /home/atharvmane/libtorch/include/torch/csrc/autograd/forward_grad.h \
- /usr/include/c++/9/unordered_set /usr/include/c++/9/bits/unordered_set.h \
  /home/atharvmane/libtorch/include/ATen/NamedTensorUtils.h \
  /home/atharvmane/libtorch/include/ATen/NamedTensor.h \
  /home/atharvmane/libtorch/include/ATen/TensorNames.h \
@@ -798,10 +818,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: \
  /home/atharvmane/libtorch/include/ATen/core/functional.h \
  /home/atharvmane/libtorch/include/ATen/core/jit_type.h \
  /home/atharvmane/libtorch/include/ATen/core/rref_interface.h \
- /home/atharvmane/libtorch/include/c10/core/DeviceGuard.h \
- /home/atharvmane/libtorch/include/c10/core/impl/InlineDeviceGuard.h \
- /home/atharvmane/libtorch/include/c10/core/impl/DeviceGuardImplInterface.h \
- /home/atharvmane/libtorch/include/c10/core/impl/VirtualGuardImpl.h \
  /home/atharvmane/libtorch/include/c10/core/Event.h \
  /home/atharvmane/libtorch/include/c10/core/impl/InlineEvent.h \
  /home/atharvmane/libtorch/include/c10/core/StreamGuard.h \
@@ -809,10 +825,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: \
  /home/atharvmane/libtorch/include/c10/util/FunctionRef.h \
  /home/atharvmane/libtorch/include/c10/util/Logging.h \
  /home/atharvmane/libtorch/include/c10/util/logging_is_not_google_glog.h \
- /usr/include/c++/9/map /usr/include/c++/9/bits/stl_tree.h \
- /usr/include/c++/9/bits/stl_map.h /usr/include/c++/9/bits/stl_multimap.h \
- /usr/include/c++/9/set /usr/include/c++/9/bits/stl_set.h \
- /usr/include/c++/9/bits/stl_multiset.h \
+ /usr/include/c++/9/map /usr/include/c++/9/bits/stl_map.h \
+ /usr/include/c++/9/bits/stl_multimap.h \
  /home/atharvmane/libtorch/include/ATen/WrapDimUtilsMulti.h \
  /usr/include/c++/9/bitset \
  /home/atharvmane/libtorch/include/ATen/core/VariableHooksInterface.h \
@@ -5007,17 +5021,9 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: \
  /usr/include/opencv4/opencv2/imgcodecs/imgcodecs.hpp \
  /usr/local/cuda-12.1/include/cuda_runtime.h \
  /usr/local/cuda-12.1/include/crt/host_config.h \
- /usr/local/cuda-12.1/include/builtin_types.h \
- /usr/local/cuda-12.1/include/device_types.h \
- /usr/local/cuda-12.1/include/crt/host_defines.h \
- /usr/local/cuda-12.1/include/driver_types.h \
- /usr/local/cuda-12.1/include/vector_types.h \
- /usr/local/cuda-12.1/include/surface_types.h \
- /usr/local/cuda-12.1/include/texture_types.h \
  /usr/local/cuda-12.1/include/library_types.h \
  /usr/local/cuda-12.1/include/channel_descriptor.h \
  /usr/local/cuda-12.1/include/cuda_runtime_api.h \
- /usr/local/cuda-12.1/include/cuda_device_runtime_api.h \
  /usr/local/cuda-12.1/include/driver_functions.h \
  /usr/local/cuda-12.1/include/vector_functions.h \
  /usr/local/cuda-12.1/include/vector_functions.hpp \
