@@ -256,28 +256,30 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
   /home/atharvmane/libtorch/include/c10/util/TypeSafeSignMath.h \
   /usr/local/cuda-12.1/include/cuda.h \
   /usr/include/c++/9/stdlib.h \
-  /home/atharvmane/libtorch/include/c10/cuda/CUDACachingAllocator.h \
-  /home/atharvmane/libtorch/include/c10/core/Allocator.h \
+  /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/torch.h \
+  /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/all.h \
+  /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/autograd.h \
+  /home/atharvmane/libtorch/include/torch/csrc/autograd/autograd.h \
+  /home/atharvmane/libtorch/include/torch/csrc/autograd/variable.h \
+  /home/atharvmane/libtorch/include/torch/csrc/utils/python_stub.h \
+  /home/atharvmane/libtorch/include/torch/csrc/Export.h \
+  /home/atharvmane/libtorch/include/torch/csrc/autograd/cpp_hook.h \
+  /home/atharvmane/libtorch/include/torch/csrc/autograd/function_hook.h \
+  /home/atharvmane/libtorch/include/ATen/Tensor.h \
+  /home/atharvmane/libtorch/include/ATen/core/Tensor.h \
+  /home/atharvmane/libtorch/include/ATen/core/TensorBody.h \
   /home/atharvmane/libtorch/include/c10/core/Device.h \
   /home/atharvmane/libtorch/include/c10/core/DeviceType.h \
-  /home/atharvmane/libtorch/include/c10/util/ThreadLocalDebugInfo.h \
-  /home/atharvmane/libtorch/include/c10/util/UniqueVoidPtr.h \
-  /home/atharvmane/libtorch/include/c10/core/StorageImpl.h \
-  /home/atharvmane/libtorch/include/c10/core/SymInt.h \
-  /home/atharvmane/libtorch/include/c10/core/SymBool.h \
-  /home/atharvmane/libtorch/include/c10/core/SymNodeImpl.h \
-  /home/atharvmane/libtorch/include/c10/util/ArrayRef.h \
-  /home/atharvmane/libtorch/include/c10/util/Deprecated.h \
-  /home/atharvmane/libtorch/include/c10/util/SmallVector.h \
-  /home/atharvmane/libtorch/include/c10/util/AlignOf.h \
-  /home/atharvmane/libtorch/include/c10/util/Optional.h \
+  /home/atharvmane/libtorch/include/c10/core/Layout.h \
+  /home/atharvmane/libtorch/include/c10/core/Backend.h \
+  /home/atharvmane/libtorch/include/c10/core/DispatchKey.h \
+  /home/atharvmane/libtorch/include/c10/core/DispatchKeySet.h \
   /home/atharvmane/libtorch/include/c10/util/Metaprogramming.h \
   /home/atharvmane/libtorch/include/c10/util/Array.h \
   /home/atharvmane/libtorch/include/c10/util/TypeList.h \
   /home/atharvmane/libtorch/include/c10/util/TypeTraits.h \
-  /home/atharvmane/libtorch/include/c10/util/intrusive_ptr.h \
-  /home/atharvmane/libtorch/include/c10/util/MaybeOwned.h \
-  /usr/include/c++/9/atomic \
+  /home/atharvmane/libtorch/include/c10/util/llvmMathExtras.h \
+  /home/atharvmane/libtorch/include/c10/util/bit_cast.h \
   /usr/include/c++/9/climits \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/syslimits.h \
@@ -288,18 +290,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
   /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
-  /usr/include/c++/9/numeric \
-  /usr/include/c++/9/bits/stl_numeric.h \
-  /usr/include/c++/9/pstl/glue_numeric_defs.h \
-  /home/atharvmane/libtorch/include/c10/core/impl/PyObjectSlot.h \
-  /home/atharvmane/libtorch/include/c10/core/impl/HermeticPyObjectTLS.h \
-  /home/atharvmane/libtorch/include/c10/core/impl/PyInterpreter.h \
-  /home/atharvmane/libtorch/include/c10/core/Layout.h \
-  /home/atharvmane/libtorch/include/c10/core/Backend.h \
-  /home/atharvmane/libtorch/include/c10/core/DispatchKey.h \
-  /home/atharvmane/libtorch/include/c10/core/DispatchKeySet.h \
-  /home/atharvmane/libtorch/include/c10/util/llvmMathExtras.h \
-  /home/atharvmane/libtorch/include/c10/util/bit_cast.h \
   /usr/include/c++/9/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -325,46 +315,12 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
   /usr/include/c++/9/tr1/poly_laguerre.tcc \
   /usr/include/c++/9/tr1/riemann_zeta.tcc \
   /home/atharvmane/libtorch/include/c10/core/MemoryFormat.h \
-  /home/atharvmane/libtorch/include/c10/core/SymIntArrayRef.h \
-  /home/atharvmane/libtorch/include/c10/util/python_stub.h \
-  /home/atharvmane/libtorch/include/c10/cuda/CUDAGraphsC10Utils.h \
-  /home/atharvmane/libtorch/include/c10/cuda/CUDAStream.h \
-  /usr/local/cuda-12.1/include/cuda_runtime_api.h \
-  /usr/local/cuda-12.1/include/crt/host_defines.h \
-  /usr/local/cuda-12.1/include/builtin_types.h \
-  /usr/local/cuda-12.1/include/device_types.h \
-  /usr/local/cuda-12.1/include/driver_types.h \
-  /usr/local/cuda-12.1/include/vector_types.h \
-  /usr/local/cuda-12.1/include/surface_types.h \
-  /usr/local/cuda-12.1/include/texture_types.h \
-  /usr/local/cuda-12.1/include/cuda_device_runtime_api.h \
-  /home/atharvmane/libtorch/include/c10/core/DeviceGuard.h \
-  /home/atharvmane/libtorch/include/c10/core/impl/InlineDeviceGuard.h \
-  /home/atharvmane/libtorch/include/c10/core/impl/DeviceGuardImplInterface.h \
-  /home/atharvmane/libtorch/include/c10/core/Stream.h \
-  /home/atharvmane/libtorch/include/c10/util/Registry.h \
-  /home/atharvmane/libtorch/include/c10/util/Type.h \
-  /home/atharvmane/libtorch/include/c10/core/impl/VirtualGuardImpl.h \
-  /home/atharvmane/libtorch/include/c10/cuda/CUDAFunctions.h \
-  /home/atharvmane/libtorch/include/c10/core/impl/GPUTrace.h \
-  /usr/include/c++/9/set \
-  /usr/include/c++/9/bits/stl_tree.h \
-  /usr/include/c++/9/bits/stl_set.h \
-  /usr/include/c++/9/bits/stl_multiset.h \
-  /usr/include/c++/9/unordered_set \
-  /usr/include/c++/9/bits/unordered_set.h \
-  /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/torch.h \
-  /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/all.h \
-  /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/autograd.h \
-  /home/atharvmane/libtorch/include/torch/csrc/autograd/autograd.h \
-  /home/atharvmane/libtorch/include/torch/csrc/autograd/variable.h \
-  /home/atharvmane/libtorch/include/torch/csrc/Export.h \
-  /home/atharvmane/libtorch/include/torch/csrc/autograd/cpp_hook.h \
-  /home/atharvmane/libtorch/include/torch/csrc/autograd/function_hook.h \
-  /home/atharvmane/libtorch/include/ATen/Tensor.h \
-  /home/atharvmane/libtorch/include/ATen/core/Tensor.h \
-  /home/atharvmane/libtorch/include/ATen/core/TensorBody.h \
+  /home/atharvmane/libtorch/include/c10/util/ArrayRef.h \
+  /home/atharvmane/libtorch/include/c10/util/Deprecated.h \
+  /home/atharvmane/libtorch/include/c10/util/SmallVector.h \
+  /home/atharvmane/libtorch/include/c10/util/AlignOf.h \
   /home/atharvmane/libtorch/include/c10/core/QScheme.h \
+  /home/atharvmane/libtorch/include/c10/core/Stream.h \
   /home/atharvmane/libtorch/include/c10/core/Scalar.h \
   /home/atharvmane/libtorch/include/c10/core/OptionalRef.h \
   /home/atharvmane/libtorch/include/c10/core/ScalarType.h \
@@ -388,6 +344,16 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
   /home/atharvmane/libtorch/include/c10/util/quint4x2.h \
   /home/atharvmane/libtorch/include/c10/util/quint8.h \
   /home/atharvmane/libtorch/include/c10/core/SymFloat.h \
+  /home/atharvmane/libtorch/include/c10/core/SymBool.h \
+  /home/atharvmane/libtorch/include/c10/core/SymNodeImpl.h \
+  /home/atharvmane/libtorch/include/c10/util/Optional.h \
+  /home/atharvmane/libtorch/include/c10/util/intrusive_ptr.h \
+  /home/atharvmane/libtorch/include/c10/util/MaybeOwned.h \
+  /usr/include/c++/9/atomic \
+  /home/atharvmane/libtorch/include/c10/core/SymInt.h \
+  /usr/include/c++/9/numeric \
+  /usr/include/c++/9/bits/stl_numeric.h \
+  /usr/include/c++/9/pstl/glue_numeric_defs.h \
   /home/atharvmane/libtorch/include/c10/util/TypeCast.h \
   /home/atharvmane/libtorch/include/c10/core/ScalarTypeToTypeMeta.h \
   /home/atharvmane/libtorch/include/c10/util/typeid.h \
@@ -397,6 +363,14 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
   /usr/include/c++/9/cinttypes \
   /usr/include/inttypes.h \
   /home/atharvmane/libtorch/include/c10/core/Storage.h \
+  /home/atharvmane/libtorch/include/c10/core/StorageImpl.h \
+  /home/atharvmane/libtorch/include/c10/core/Allocator.h \
+  /home/atharvmane/libtorch/include/c10/util/ThreadLocalDebugInfo.h \
+  /home/atharvmane/libtorch/include/c10/util/UniqueVoidPtr.h \
+  /home/atharvmane/libtorch/include/c10/core/impl/PyObjectSlot.h \
+  /home/atharvmane/libtorch/include/c10/core/impl/HermeticPyObjectTLS.h \
+  /home/atharvmane/libtorch/include/c10/core/impl/PyInterpreter.h \
+  /home/atharvmane/libtorch/include/c10/core/SymIntArrayRef.h \
   /home/atharvmane/libtorch/include/c10/core/TensorImpl.h \
   /home/atharvmane/libtorch/include/c10/core/InferenceMode.h \
   /home/atharvmane/libtorch/include/c10/core/AutogradState.h \
@@ -405,6 +379,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
   /home/atharvmane/libtorch/include/c10/core/impl/SizesAndStrides.h \
   /home/atharvmane/libtorch/include/c10/util/DimVector.h \
   /home/atharvmane/libtorch/include/c10/util/Flags.h \
+  /home/atharvmane/libtorch/include/c10/util/Registry.h \
+  /home/atharvmane/libtorch/include/c10/util/Type.h \
   /home/atharvmane/libtorch/include/c10/util/accumulate.h \
   /home/atharvmane/libtorch/include/c10/util/safe_numerics.h \
   /home/atharvmane/libtorch/include/c10/core/UndefinedTensorImpl.h \
@@ -861,6 +837,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
   /usr/include/c++/9/bits/locale_conv.h \
   /usr/include/c++/9/bits/quoted_string.h \
   /home/atharvmane/libtorch/include/torch/csrc/autograd/forward_grad.h \
+  /usr/include/c++/9/unordered_set \
+  /usr/include/c++/9/bits/unordered_set.h \
   /home/atharvmane/libtorch/include/ATen/NamedTensorUtils.h \
   /home/atharvmane/libtorch/include/ATen/NamedTensor.h \
   /home/atharvmane/libtorch/include/ATen/TensorNames.h \
@@ -888,6 +866,10 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
   /home/atharvmane/libtorch/include/ATen/core/functional.h \
   /home/atharvmane/libtorch/include/ATen/core/jit_type.h \
   /home/atharvmane/libtorch/include/ATen/core/rref_interface.h \
+  /home/atharvmane/libtorch/include/c10/core/DeviceGuard.h \
+  /home/atharvmane/libtorch/include/c10/core/impl/InlineDeviceGuard.h \
+  /home/atharvmane/libtorch/include/c10/core/impl/DeviceGuardImplInterface.h \
+  /home/atharvmane/libtorch/include/c10/core/impl/VirtualGuardImpl.h \
   /home/atharvmane/libtorch/include/c10/core/Event.h \
   /home/atharvmane/libtorch/include/c10/core/impl/InlineEvent.h \
   /home/atharvmane/libtorch/include/c10/core/StreamGuard.h \
@@ -896,8 +878,12 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
   /home/atharvmane/libtorch/include/c10/util/Logging.h \
   /home/atharvmane/libtorch/include/c10/util/logging_is_not_google_glog.h \
   /usr/include/c++/9/map \
+  /usr/include/c++/9/bits/stl_tree.h \
   /usr/include/c++/9/bits/stl_map.h \
   /usr/include/c++/9/bits/stl_multimap.h \
+  /usr/include/c++/9/set \
+  /usr/include/c++/9/bits/stl_set.h \
+  /usr/include/c++/9/bits/stl_multiset.h \
   /home/atharvmane/libtorch/include/ATen/WrapDimUtilsMulti.h \
   /usr/include/c++/9/bitset \
   /home/atharvmane/libtorch/include/ATen/core/VariableHooksInterface.h \
@@ -5120,9 +5106,17 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
   /usr/include/opencv4/opencv2/imgcodecs/imgcodecs.hpp \
   /usr/local/cuda-12.1/include/cuda_runtime.h \
   /usr/local/cuda-12.1/include/crt/host_config.h \
+  /usr/local/cuda-12.1/include/builtin_types.h \
+  /usr/local/cuda-12.1/include/device_types.h \
+  /usr/local/cuda-12.1/include/crt/host_defines.h \
+  /usr/local/cuda-12.1/include/driver_types.h \
+  /usr/local/cuda-12.1/include/vector_types.h \
+  /usr/local/cuda-12.1/include/surface_types.h \
+  /usr/local/cuda-12.1/include/texture_types.h \
   /usr/local/cuda-12.1/include/library_types.h \
   /usr/local/cuda-12.1/include/channel_descriptor.h \
   /usr/local/cuda-12.1/include/cuda_runtime_api.h \
+  /usr/local/cuda-12.1/include/cuda_device_runtime_api.h \
   /usr/local/cuda-12.1/include/driver_functions.h \
   /usr/local/cuda-12.1/include/vector_functions.h \
   /usr/local/cuda-12.1/include/vector_functions.hpp \
@@ -5142,6 +5136,12 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /usr/local/cuda-12.1/include/library_types.h:
 
+/usr/local/cuda-12.1/include/vector_types.h:
+
+/usr/local/cuda-12.1/include/driver_types.h:
+
+/usr/local/cuda-12.1/include/crt/host_defines.h:
+
 /usr/local/cuda-12.1/include/cuda_runtime.h:
 
 /usr/include/opencv4/opencv2/imgcodecs/imgcodecs.hpp:
@@ -5154,21 +5154,17 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /usr/include/opencv4/opencv2/videostab/wobble_suppression.hpp:
 
-/usr/include/opencv4/opencv2/videostab/inpainting.hpp:
+/home/atharvmane/libtorch/include/ATen/ops/max_pool1d_with_indices.h:
 
-/usr/include/opencv4/opencv2/videostab/frame_source.hpp:
+/home/atharvmane/libtorch/include/ATen/ops/max_pool1d.h:
 
-/usr/include/opencv4/opencv2/videostab/motion_core.hpp:
+/home/atharvmane/libtorch/include/ATen/ops/_pdist_backward_ops.h:
 
-/usr/include/opencv4/opencv2/videostab/global_motion.hpp:
+/home/atharvmane/libtorch/include/ATen/core/grad_mode.h:
 
-/usr/include/opencv4/opencv2/videostab/stabilizer.hpp:
+/usr/include/opencv4/opencv2/core/async.hpp:
 
-/usr/include/opencv4/opencv2/videostab.hpp:
-
-/usr/include/opencv4/opencv2/video/tracking.hpp:
-
-/usr/include/opencv4/opencv2/video.hpp:
+/home/atharvmane/libtorch/include/ATen/ops/upsample_nearest1d_backward.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/matmul.h:
 
@@ -5193,10 +5189,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/logical_or.h:
 
 /home/atharvmane/libtorch/include/torch/csrc/utils/schema_info.h:
-
-/usr/include/opencv4/opencv2/videostab/fast_marching.hpp:
-
-/home/atharvmane/libtorch/include/ATen/ops/logical_not.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_to_sparse_bsc.h:
 
@@ -5242,10 +5234,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/ccol_indices.h:
 
-/usr/include/opencv4/opencv2/videostab/log.hpp:
-
-/home/atharvmane/libtorch/include/ATen/ops/to_sparse_csr.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/linalg_matrix_norm.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/mkldnn_linear_backward.h:
@@ -5287,6 +5275,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/topk.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/linalg_cross_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/linalg_cross.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/linalg_cond_ops.h:
 
@@ -5342,6 +5332,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /usr/include/x86_64-linux-gnu/bits/ss_flags.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/max.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/isposinf.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/fft_rfft2_ops.h:
@@ -5379,6 +5371,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/imag.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/concatenate.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/huber_loss_backward_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/requires_grad_native.h:
 
@@ -5594,8 +5588,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/leaky_relu_backward_meta.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/max_pool1d.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/fft_ifftshift.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/exponential.h:
@@ -5605,6 +5597,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/expand_copy_ops.h:
 
 /usr/include/c++/9/bits/stream_iterator.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/matrix_exp_backward_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/expand_as.h:
 
@@ -5704,6 +5698,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/deg2rad.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/cumulative_trapezoid.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/cumprod_backward.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/addcmul.h:
@@ -5758,10 +5754,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/cross_entropy_loss_ops.h:
 
-/usr/include/opencv4/opencv2/videostab/motion_stabilizing.hpp:
-
-/home/atharvmane/libtorch/include/ATen/ops/_use_cudnn_ctc_loss_native.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/cross_entropy_loss.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/atleast_3d_ops.h:
@@ -5809,6 +5801,10 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/masked_select_backward.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/frac_meta.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/to_sparse_csr.h:
+
+/usr/include/opencv4/opencv2/videostab/log.hpp:
 
 /home/atharvmane/libtorch/include/ATen/ops/_ctc_loss.h:
 
@@ -6254,10 +6250,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_thnn_differentiable_gru_cell_backward_ops.h:
 
-/usr/include/opencv4/opencv2/video/background_segm.hpp:
-
-/home/atharvmane/libtorch/include/ATen/ops/_thnn_differentiable_gru_cell_backward.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/max_pool2d_with_indices_meta.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_test_serialization_subcmul.h:
@@ -6329,6 +6321,12 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/movedim_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/pad_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_sparse_mm_reduce_impl.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/max_pool1d_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_amp_update_scale_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_sparse_csr_prod.h:
 
@@ -6469,6 +6467,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/_pack_padded_sequence_backward_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/bitwise_left_shift.h:
+
+/home/atharvmane/libtorch/include/torch/csrc/utils/python_stub.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/diagonal_scatter.h:
 
@@ -7010,47 +7010,19 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_fake_quantize_learnable_per_channel_affine.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/matrix_H.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_euclidean_dist_ops.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/_foreach_acos_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_empty_per_channel_affine_quantized_ops.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/9/include/rtmintrin.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/expand_native.h:
+/home/atharvmane/libtorch/include/ATen/ops/embedding_dense_backward.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/fft_ihfftn.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/concatenate_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_nested_tensor_from_mask_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/bitwise_right_shift.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_scaled_dot_product_efficient_attention_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_empty_affine_quantized_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_empty_affine_quantized.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/soft_margin_loss_backward_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_segment_reduce_backward_ops.h:
-
-/usr/include/linux/errno.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_foreach_norm_ops.h:
-
-/usr/include/c++/9/bits/list.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/detach_copy_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_embedding_bag_forward_only.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_embedding_bag_backward.h:
-
-/home/atharvmane/libtorch/include/c10/core/impl/PythonDispatcherTLS.h:
+/home/atharvmane/libtorch/include/ATen/ops/erf_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_cast_Float.h:
 
@@ -7060,9 +7032,69 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_foreach_log1p.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/embedding_dense_backward.h:
+/home/atharvmane/libtorch/include/ATen/ops/_sparse_bsr_tensor_unsafe.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/erf_ops.h:
+/home/atharvmane/libtorch/include/ATen/ops/equal_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/dot_ops.h:
+
+/home/atharvmane/libtorch/include/torch/csrc/jit/api/compilation_unit.h:
+
+/usr/include/c++/9/tr1/hypergeometric.tcc:
+
+/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/serialize/tensor.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_test_autograd_multiple_dispatch.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_sparse_bsc_tensor_unsafe.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/reflection_pad3d.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/dist_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_foreach_sinh.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/special_multigammaln_native.h:
+
+/usr/include/c++/9/bits/ostream.tcc:
+
+/home/atharvmane/libtorch/include/ATen/ops/_sparse_sum_backward_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/alias_copy.h:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/diag_ops.h:
+
+/usr/include/c++/9/unordered_set:
+
+/usr/include/c++/9/typeindex:
+
+/home/atharvmane/libtorch/include/ATen/ops/_use_cudnn_ctc_loss_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/feature_dropout_ops.h:
+
+/usr/include/wchar.h:
+
+/home/atharvmane/libtorch/include/c10/core/CompileTimeFunctionPointer.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/dense_dim_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_weight_norm_interface_backward_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_make_per_channel_quantized_tensor.h:
+
+/usr/include/c++/9/pstl/pstl_config.h:
+
+/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/data/datasets/chunk.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/gru_cell.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/frobenius_norm.h:
+
+/usr/include/c++/9/bits/unordered_set.h:
+
+/usr/include/opencv4/opencv2/flann/logger.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_foreach_log1p_ops.h:
 
@@ -7083,6 +7115,16 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/clone_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/clamp_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_thnn_fused_lstm_cell_backward_impl.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/dsplit.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/mkldnn_linear_backward_input.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_foreach_sqrt.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/clamp_min_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/cholesky_solve_ops.h:
 
@@ -7117,6 +7159,12 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/select_copy_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/special_logit_native.h:
+
+/usr/include/c++/9/array:
+
+/home/atharvmane/libtorch/include/ATen/ops/_pdist_forward.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/embedding_dense_backward_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/gru_cell_ops.h:
 
@@ -7178,6 +7226,10 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/core/Formatting.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/instance_norm_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/core/boxing/KernelFunction.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/clone.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/cummin.h:
@@ -7190,9 +7242,15 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/fmod_meta.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/cumulative_trapezoid.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/amin_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_foreach_trunc_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/is_distributed.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/align_to_ops.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
@@ -7200,11 +7258,7 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_debug_has_internal_overlap.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/linalg_cross.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/argmin_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_foreach_expm1_ops.h:
+/home/atharvmane/libtorch/include/ATen/ops/addmm_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_unique2.h:
 
@@ -7228,7 +7282,13 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/trunc_native.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/argmin_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_foreach_expm1_ops.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/absolute_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/erfinv_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/masked_scatter_native.h:
 
@@ -7376,7 +7436,37 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/linalg_lu_native.h:
 
+/usr/include/c++/9/bits/stl_iterator.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/column_stack_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/mkldnn_convolution.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_cast_Double_ops.h:
+
 /home/atharvmane/libtorch/include/c10/core/UndefinedTensorImpl.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/embedding_sparse_backward.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/mwaitxintrin.h:
+
+/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/nn/modules/pooling.h:
+
+/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/autograd.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_thnn_fused_lstm_cell.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_upsample_bilinear2d_aa.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/linear_backward.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/glu_backward_jvp_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/arcsinh.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/quantize_per_tensor_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_conj_physical_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/nll_loss_nd.h:
 
@@ -7400,13 +7490,37 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_cufft_get_plan_cache_max_size_native.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/conv1d_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/divide_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/DimVector.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/stride_ops.h:
+
+/home/atharvmane/libtorch/include/c10/core/WrapDimMinimal.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/logical_and_ops.h:
+
+/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/nn/modules/container/any_value.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/glu_backward_jvp.h:
 
 /home/atharvmane/libtorch/include/c10/core/InferenceMode.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_cudnn_rnn_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/eye.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/isneginf.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/int_repr_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_has_compatible_shallow_copy_type_ops.h:
+
+/home/atharvmane/libtorch/include/c10/core/impl/PyObjectSlot.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_efficientzerotensor_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/random_ops.h:
 
@@ -7415,6 +7529,36 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/c10/core/ScalarTypeToTypeMeta.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/indices.h:
+
+/usr/include/c++/9/numeric:
+
+/home/atharvmane/libtorch/include/ATen/ops/_sparse_compressed_tensor_unsafe_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/linalg_svd_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_sparse_softmax_backward_data_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/fft_irfftn_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_cudnn_rnn_flatten_weight.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_foreach_sign.h:
+
+/home/atharvmane/libtorch/include/c10/util/MaybeOwned.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/batch_norm_update_stats.h:
+
+/usr/include/opencv4/opencv2/flann/kdtree_index.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/rand_like_ops.h:
+
+/usr/include/opencv4/opencv2/flann/timer.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/histogram.h:
+
+/home/atharvmane/libtorch/include/torch/library.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/miopen_convolution_relu_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/conj_physical.h:
 
@@ -7432,6 +7576,18 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_neg_view_native.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/_nested_from_padded_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_histogramdd_from_bin_cts_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/native_channel_shuffle.h:
+
+/home/atharvmane/libtorch/include/c10/util/qint32.h:
+
+/home/atharvmane/libtorch/include/ATen/NativeFunctions.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_adaptive_avg_pool2d_backward_native.h:
+
 /home/atharvmane/libtorch/include/c10/util/Float8_e5m2-inl.h:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
@@ -7445,6 +7601,12 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/rot90.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/elu_backward_meta.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_foreach_tan.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/angle_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/sgn_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_neg_view_copy_native.h:
 
@@ -7477,6 +7639,166 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/is_set_to_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_unsafe_view_native.h:
+
+/home/atharvmane/libtorch/include/c10/core/Stream.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_foreach_norm_ops.h:
+
+/usr/include/c++/9/bits/list.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
+/usr/include/c++/9/bits/stl_deque.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/sum.h:
+
+/home/atharvmane/libtorch/include/c10/util/SmallVector.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/triplet_margin_loss.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/lift_fresh_copy_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/random_native.h:
+
+/usr/include/c++/9/tr1/legendre_function.tcc:
+
+/usr/include/c++/9/bits/regex.tcc:
+
+/home/atharvmane/libtorch/include/ATen/ops/_mkldnn_reshape.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/view_ops.h:
+
+/home/atharvmane/libtorch/include/c10/core/GeneratorImpl.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/special_polygamma_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/narrow_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/index_add_ops.h:
+
+/usr/include/c++/9/tr1/exp_integral.tcc:
+
+/home/atharvmane/libtorch/include/ATen/ops/_spdiags_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/narrow_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/slow_conv_transpose3d_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/chunk.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/slice_copy.h:
+
+/home/atharvmane/libtorch/include/c10/util/ArrayRef.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/replication_pad2d_backward_native.h:
+
+/home/atharvmane/libtorch/include/ATen/core/Generator.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/exp_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/randint_native.h:
+
+/usr/include/c++/9/queue:
+
+/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_foreach_neg_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/linalg_multi_dot_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_to_sparse_bsr_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_resize_output_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/unsafe_chunk.h:
+
+/home/atharvmane/libtorch/include/c10/util/Type.h:
+
+/home/atharvmane/libtorch/include/torch/csrc/autograd/input_buffer.h:
+
+/home/atharvmane/libtorch/include/ATen/CPUGeneratorImpl.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/gru_cell_native.h:
+
+/home/atharvmane/libtorch/include/c10/util/Bitset.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_upsample_bicubic2d_aa.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_unique_native.h:
+
+/home/atharvmane/libtorch/include/c10/core/SymIntArrayRef.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_functional_sym_constrain_range_for_size_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_test_optional_intlist.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/mkldnn_linear_backward_input_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/sparse_csr_tensor_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/greater_equal_ops.h:
+
+/home/atharvmane/libtorch/include/c10/util/quint4x2.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/cumsum_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/sym_constrain_range_for_size_native.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/avx2intrin.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/item_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/quantized_max_pool2d.h:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
+/usr/include/c++/9/bits/stl_numeric.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_dimI_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_upsample_nearest_exact3d_backward.h:
+
+/usr/include/c++/9/cmath:
+
+/home/atharvmane/libtorch/include/ATen/ops/fake_quantize_per_tensor_affine_cachemask_ops.h:
+
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+
+/usr/include/linux/limits.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/atan_meta.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/histc.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/special_zeta_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/fft_ifftn_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/searchsorted_ops.h:
+
+/usr/include/c++/9/tr1/beta_function.tcc:
+
+/home/atharvmane/libtorch/include/ATen/ops/special_ndtri.h:
+
+/home/atharvmane/libtorch/include/c10/util/TypeTraits.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/arcsin.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_neg_view_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/dequantize_ops.h:
+
+/home/atharvmane/libtorch/include/c10/core/DispatchKeySet.h:
+
+/usr/include/opencv4/opencv2/highgui/highgui.hpp:
+
+/home/atharvmane/libtorch/include/ATen/ops/_upsample_nearest_exact2d_backward.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/nonzero_static_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_sparse_log_softmax_backward_data_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/embedding_backward.h:
 
@@ -7514,6 +7836,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_euclidean_dist_native.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/_foreach_sqrt_ops.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/flatten_ops.h:
 
 /home/atharvmane/libtorch/include/torch/csrc/Export.h:
@@ -7535,328 +7859,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/torch/csrc/autograd/autograd.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/permute_copy_ops.h:
-
-/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/torch.h:
-
-/usr/local/cuda-12.1/include/crt/host_defines.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/fractional_max_pool2d.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_scaled_dot_product_efficient_attention_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/col_indices_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/special_hermite_polynomial_h.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/bincount.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/div_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_foreach_sqrt_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/mkldnn_adaptive_avg_pool2d_native.h:
-
-/usr/include/c++/9/bits/stl_set.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/triangular_solve_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/miopen_convolution_transpose_native.h:
-
-/usr/include/fenv.h:
-
-/usr/include/c++/9/new:
-
-/home/atharvmane/libtorch/include/ATen/ops/linalg_qr_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/EmptyTensor.h:
-
-/usr/include/c++/9/bits/shared_ptr.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_cufft_set_plan_cache_max_size.h:
-
-/home/atharvmane/libtorch/include/c10/core/WrapDimMinimal.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/logical_and_ops.h:
-
-/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/nn/modules/container/any_value.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/dstack_native.h:
-
-/home/atharvmane/libtorch/include/c10/core/Stream.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/addmm_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_thnn_fused_lstm_cell_backward_impl.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/dsplit.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/mkldnn_linear_backward_input.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_foreach_sqrt.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/clamp_min_ops.h:
-
-/usr/include/c++/9/array:
-
-/home/atharvmane/libtorch/include/ATen/ops/_pdist_forward.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/embedding_dense_backward_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/not_equal_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_linalg_slogdet_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/embedding_sparse_backward.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/mwaitxintrin.h:
-
-/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/nn/modules/pooling.h:
-
-/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/autograd.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_thnn_fused_lstm_cell.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_upsample_bilinear2d_aa.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/linear_backward.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/glu_backward_jvp_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/arcsinh.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/quantize_per_tensor_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_conj_physical_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/kl_div.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_cslt_sparse_mm.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/instance_norm_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/core/boxing/KernelFunction.h:
-
-/home/atharvmane/libtorch/include/c10/util/python_stub.h:
-
-/usr/include/c++/9/bits/stl_deque.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/triplet_margin_loss.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/lift_fresh_copy_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/random_native.h:
-
-/usr/include/c++/9/tr1/legendre_function.tcc:
-
-/usr/include/c++/9/bits/regex.tcc:
-
-/home/atharvmane/libtorch/include/ATen/ops/_mkldnn_reshape.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/view_ops.h:
-
-/usr/include/c++/9/set:
-
-/home/atharvmane/libtorch/include/ATen/ops/fmax_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_scaled_dot_product_efficient_attention.h:
-
-/usr/include/c++/9/tr1/hypergeometric.tcc:
-
-/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/serialize/tensor.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/dot_ops.h:
-
-/home/atharvmane/libtorch/include/torch/csrc/jit/api/compilation_unit.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/narrow_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/index_add_ops.h:
-
-/home/atharvmane/libtorch/include/c10/core/GeneratorImpl.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/special_polygamma_native.h:
-
-/usr/include/c++/9/tr1/exp_integral.tcc:
-
-/home/atharvmane/libtorch/include/ATen/ops/_spdiags_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/narrow_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/slow_conv_transpose3d_native.h:
-
-/home/atharvmane/libtorch/include/ATen/core/Generator.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/exp_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/randint_native.h:
-
-/usr/include/c++/9/queue:
-
-/home/atharvmane/libtorch/include/c10/cuda/CUDAStream.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_native_batch_norm_legit_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/linspace_ops.h:
-
-/usr/include/c++/9/bits/stl_multiset.h:
-
-/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_foreach_neg_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/linalg_multi_dot_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_to_sparse_bsr_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_resize_output_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/unsafe_chunk.h:
-
-/home/atharvmane/libtorch/include/c10/util/Type.h:
-
-/home/atharvmane/libtorch/include/torch/csrc/autograd/input_buffer.h:
-
-/home/atharvmane/libtorch/include/ATen/CPUGeneratorImpl.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/gru_cell_native.h:
-
-/home/atharvmane/libtorch/include/c10/util/Bitset.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_upsample_bicubic2d_aa.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_unique_native.h:
-
-/home/atharvmane/libtorch/include/c10/core/SymIntArrayRef.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_functional_sym_constrain_range_for_size_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_test_optional_intlist.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/fft_fft_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/miopen_rnn_backward_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_foreach_log10_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/greater_equal_ops.h:
-
-/home/atharvmane/libtorch/include/c10/util/quint4x2.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/cumsum_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/sym_constrain_range_for_size_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_dimI_ops.h:
-
-/usr/local/cuda-12.1/include/driver_types.h:
-
-/usr/include/c++/9/bits/unordered_map.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_upsample_nearest_exact3d_backward.h:
-
-/usr/include/c++/9/cmath:
-
-/home/atharvmane/libtorch/include/ATen/ops/_neg_view_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/dequantize_ops.h:
-
-/home/atharvmane/libtorch/include/c10/core/DispatchKeySet.h:
-
-/usr/include/opencv4/opencv2/highgui/highgui.hpp:
-
-/home/atharvmane/libtorch/include/ATen/ops/_upsample_nearest_exact2d_backward.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/eye.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/isneginf.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/int_repr_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_has_compatible_shallow_copy_type_ops.h:
-
-/home/atharvmane/libtorch/include/c10/core/impl/PyObjectSlot.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_efficientzerotensor_ops.h:
-
-/usr/include/c++/9/bits/stl_numeric.h:
-
-/usr/include/c++/9/numeric:
-
-/home/atharvmane/libtorch/include/ATen/ops/_sparse_compressed_tensor_unsafe_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/linalg_svd_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_sparse_softmax_backward_data_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/fft_irfftn_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_cudnn_rnn_flatten_weight.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/fake_quantize_per_tensor_affine_cachemask_ops.h:
-
-/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
-
-/usr/include/linux/limits.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/atan_meta.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_foreach_sign.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_foreach_tan.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/sgn_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/angle_ops.h:
-
-/home/atharvmane/libtorch/include/c10/util/MaybeOwned.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/histc.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/special_zeta_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/fft_ifftn_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/searchsorted_ops.h:
-
-/usr/include/c++/9/tr1/beta_function.tcc:
-
-/home/atharvmane/libtorch/include/ATen/ops/special_ndtri.h:
-
-/home/atharvmane/libtorch/include/c10/util/TypeTraits.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/arcsin.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/sum.h:
-
-/home/atharvmane/libtorch/include/c10/util/SmallVector.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/chunk.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/slice_copy.h:
-
-/home/atharvmane/libtorch/include/c10/util/ArrayRef.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/replication_pad2d_backward_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/batch_norm_update_stats.h:
-
-/usr/include/opencv4/opencv2/flann/kdtree_index.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/rand_like_ops.h:
-
-/usr/include/opencv4/opencv2/flann/timer.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/histogram.h:
-
-/home/atharvmane/libtorch/include/torch/library.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/miopen_convolution_relu_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/nonzero_static_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_sparse_log_softmax_backward_data_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/is_same_size_ops.h:
 
@@ -7934,18 +7936,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/masked_select.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/_foreach_maximum.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/isposinf_meta.h:
-
-/usr/include/c++/9/bits/stl_tree.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/trace.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/special_hermite_polynomial_h_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/q_per_channel_axis_ops.h:
-
 /home/atharvmane/libtorch/include/c10/util/Deprecated.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_linalg_det_ops.h:
@@ -7967,22 +7957,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/nll_loss_forward_native.h:
 
 /home/atharvmane/libtorch/include/ATen/core/ATenGeneral.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/linalg_matrix_norm_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_lstm_mps.h:
-
-/usr/include/c++/9/bits/unordered_set.h:
-
-/usr/include/opencv4/opencv2/flann/logger.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_unsafe_index.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/broadcast_to.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/t_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/mkldnn_rnn_layer_backward_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/as_strided_copy_ops.h:
 
@@ -8022,6 +7996,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp:
 
+/usr/include/c++/9/new:
+
 /home/atharvmane/libtorch/include/c10/util/ThreadLocalDebugInfo.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/lu_unpack_meta.h:
@@ -8051,6 +8027,24 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/c10/util/BFloat16-inl.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/nll_loss_nd_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/fft_ihfftn.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/concatenate_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_nested_tensor_from_mask_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/bitwise_right_shift.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_scaled_dot_product_efficient_attention_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_empty_affine_quantized_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/fft_fft_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_foreach_log10_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/miopen_rnn_backward_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/mm_ops.h:
 
@@ -8136,11 +8130,27 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/diff.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/maximum_ops.h:
+
 /usr/include/c++/9/bits/ptr_traits.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/addcdiv_ops.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/fractional_max_pool2d.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_scaled_dot_product_efficient_attention_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/col_indices_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/special_hermite_polynomial_h.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/bincount.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/div_ops.h:
+
+/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/torch.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/linalg_solve_ops.h:
 
@@ -8167,6 +8177,14 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/linalg_norm_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/matrix_power.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/median_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/max_pool3d_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/prod_meta.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_add_relu_ops.h:
 
@@ -8202,6 +8220,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_scaled_dot_product_flash_attention_backward_native.h:
 
+/usr/include/opencv4/opencv2/video/tracking.hpp:
+
 /home/atharvmane/libtorch/include/ATen/ops/_thnn_fused_lstm_cell_backward_ops.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
@@ -8231,14 +8251,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/bitwise_left_shift_native.h:
-
-/usr/include/wchar.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_use_cudnn_ctc_loss_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/feature_dropout_ops.h:
-
-/home/atharvmane/libtorch/include/c10/core/CompileTimeFunctionPointer.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/cat.h:
 
@@ -8270,6 +8282,12 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/mkldnn_max_pool2d.h:
 
+/usr/include/c++/9/set:
+
+/home/atharvmane/libtorch/include/ATen/ops/fmax_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_scaled_dot_product_efficient_attention.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/exponential_ops.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
@@ -8295,6 +8313,10 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/_foreach_erfc_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_sparse_mm_reduce_impl_ops.h:
+
+/home/atharvmane/libtorch/include/c10/util/Exception.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/upsample_linear1d_ops.h:
 
 /home/atharvmane/libtorch/include/c10/util/AlignOf.h:
 
@@ -8390,6 +8412,14 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/resize.h:
 
+/usr/include/wctype.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/special_log_ndtr_native.h:
+
+/usr/include/c++/9/bits/stringfwd.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/slogdet_ops.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/cos_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/FuncTorchTLS.h:
@@ -8397,6 +8427,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/_autocast_to_reduced_precision_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_softmax_backward_data_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/expand_native.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
@@ -8437,6 +8469,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/cauchy_native.h:
 
 /usr/include/c++/9/bits/uniform_int_dist.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/log10_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/col_indices_native.h:
 
@@ -8498,20 +8532,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/is_leaf.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/_pdist_backward_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/core/grad_mode.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_euclidean_dist_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/matrix_H.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/sparse_csr_tensor_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/mkldnn_linear_backward_input_ops.h:
-
-/usr/include/opencv4/opencv2/core/async.hpp:
-
 /home/atharvmane/libtorch/include/c10/core/impl/PyInterpreter.h:
 
 /usr/include/c++/9/scoped_allocator:
@@ -8524,24 +8544,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/expm1_native.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/_weight_norm_interface_backward_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_make_per_channel_quantized_tensor.h:
-
-/usr/include/c++/9/pstl/pstl_config.h:
-
-/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/data/datasets/chunk.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_foreach_trunc_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/is_distributed.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/align_to_ops.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/dense_dim_ops.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/values_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_to_sparse_semi_structured.h:
@@ -8549,30 +8551,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/_sparse_semi_structured_linear.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/upsample_nearest3d_backward_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_cast_Double_ops.h:
-
-/usr/include/c++/9/bits/stl_iterator.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/column_stack_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/mkldnn_convolution.h:
-
-/usr/include/c++/9/unordered_set:
-
-/home/atharvmane/libtorch/include/ATen/ops/diag_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_validate_sparse_csr_tensor_args_ops.h:
-
-/usr/include/opencv4/opencv2/dnn/version.hpp:
-
-/home/atharvmane/libtorch/include/ATen/ops/_indices_copy_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/special_i1.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/slice_scatter_ops.h:
-
-/usr/include/c++/9/typeindex:
 
 /home/atharvmane/libtorch/include/ATen/ops/align_as_ops.h:
 
@@ -8600,6 +8578,12 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /usr/include/c++/9/utility:
 
+/usr/include/opencv4/opencv2/dnn/version.hpp:
+
+/home/atharvmane/libtorch/include/ATen/ops/_indices_copy_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/special_i1.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/_addmm_activation.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_nested_view_from_buffer_copy.h:
@@ -8615,6 +8599,10 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/special_bessel_y0_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/rad2deg_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_masked_scale.h:
+
+/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/nn/functional/upsampling.h:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
@@ -8704,12 +8692,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/hardswish_ops.h:
 
-/home/atharvmane/libtorch/include/c10/util/qint32.h:
-
-/home/atharvmane/libtorch/include/ATen/NativeFunctions.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_adaptive_avg_pool2d_backward_native.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/sparse_csc_tensor.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/output_nr_ops.h:
@@ -8727,6 +8709,12 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/upsample_bicubic2d_meta.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_compute_linear_combination.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_compute_linear_combination_native.h:
+
+/usr/include/c++/9/pstl/glue_numeric_defs.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/std_mean_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/inverse_ops.h:
 
@@ -8749,12 +8737,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/fill_diagonal_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_unique2_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_compute_linear_combination_native.h:
-
-/usr/include/c++/9/pstl/glue_numeric_defs.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/std_mean_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/mH_ops.h:
 
@@ -8800,7 +8782,21 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_coalesce.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/broadcast_to.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_unsafe_index.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/rename_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/diagflat_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/geometric_native.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/syslimits.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_empty_affine_quantized.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/soft_margin_loss_backward_native.h:
 
 /home/atharvmane/libtorch/include/c10/cuda/CUDAMacros.h:
 
@@ -8814,13 +8810,9 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /usr/include/stdio.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/huber_loss_backward_ops.h:
-
 /usr/include/c++/9/complex:
 
 /usr/include/c++/9/debug/debug.h:
-
-/home/atharvmane/libtorch/include/c10/cuda/CUDAFunctions.h:
 
 /home/atharvmane/libtorch/include/torch/csrc/autograd/cpp_hook.h:
 
@@ -8896,8 +8888,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/xlogy_ops.h:
 
-/home/atharvmane/libtorch/include/c10/core/impl/GPUTrace.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/fractional_max_pool2d_native.h:
 
 /home/atharvmane/libtorch/include/ATen/core/dynamic_type.h:
@@ -8945,10 +8935,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/c10/core/QEngine.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/cummaxmin_backward_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_embedding_bag_sparse_backward.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/sub_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/cudnn_convolution_add_relu_native.h:
 
@@ -9008,6 +8994,32 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /usr/include/c++/9/bits/invoke.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/_slow_conv2d_forward_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_validate_sparse_bsr_tensor_args_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/corrcoef_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/special_chebyshev_polynomial_v_ops.h:
+
+/home/atharvmane/libtorch/include/c10/util/irange.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/acos_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/embedding_backward_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/trace_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/replication_pad2d_backward_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/exp2_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/digamma_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/special_i0e_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/special_log1p_ops.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/mkldnn_max_pool3d_backward_ops.h:
 
 /home/atharvmane/libtorch/include/c10/util/in_place.h:
@@ -9020,21 +9032,11 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/col_indices_copy.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/slice_copy_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_cudnn_rnn_backward_ops.h:
-
 /usr/include/c++/9/bits/locale_facets.h:
 
 /usr/include/c++/9/initializer_list:
 
 /usr/include/c++/9/bits/refwrap.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/upsample_linear1d_ops.h:
-
-/home/atharvmane/libtorch/include/c10/util/Exception.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/gru_cell.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/adaptive_avg_pool2d_ops.h:
 
@@ -9082,6 +9084,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/fmax_ops.h:
 
+/usr/include/opencv4/opencv2/videostab.hpp:
+
 /home/atharvmane/libtorch/include/c10/util/flat_hash_map.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/fbgemm_linear_fp16_weight_ops.h:
@@ -9093,6 +9097,16 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /usr/include/c++/9/bits/memoryfwd.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/bitwise_and.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_fused_moving_avg_obs_fq_helper_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/clamp_max_meta.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/fbgemm_linear_fp16_weight_fp32_activation_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/less_equal_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/data_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/grid_sampler_2d.h:
 
@@ -9107,6 +9121,14 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/arccosh_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/eq_ops.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_embedding_bag_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_version.h:
 
 /home/atharvmane/libtorch/include/ATen/MethodOperators.h:
 
@@ -9132,8 +9154,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_conj_ops.h:
 
-/usr/local/cuda-12.1/include/vector_types.h:
-
 /usr/include/c++/9/bits/range_access.h:
 
 /usr/include/c++/9/tr1/poly_laguerre.tcc:
@@ -9141,12 +9161,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/median.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/hardshrink_backward_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_embedding_bag_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_version.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_fw_primal_copy_ops.h:
 
@@ -9254,14 +9268,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /usr/include/inttypes.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/_validate_sparse_bsr_tensor_args_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/corrcoef_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_slow_conv2d_forward_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/special_chebyshev_polynomial_v_ops.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/_efficientzerotensor.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_validate_sparse_coo_tensor_args_native.h:
@@ -9279,6 +9285,10 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/is_signed.h:
 
 /home/atharvmane/libtorch/include/ATen/WrapDimUtilsMulti.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_segment_reduce_backward_ops.h:
+
+/usr/include/linux/errno.h:
 
 /usr/include/c++/9/ext/alloc_traits.h:
 
@@ -9320,13 +9330,17 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /usr/include/c++/9/bits/stl_multimap.h:
 
+/usr/local/cuda-12.1/include/texture_types.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/multi_margin_loss_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/cumprod_ops.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/unsqueeze_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/huber_loss_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_foreach_neg.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/upsample_nearest1d_backward.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_sparse_coo_tensor_with_dims_and_tensors.h:
 
@@ -9339,6 +9353,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/nonzero_native.h:
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/mT_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/logit_backward.h:
 
@@ -9374,26 +9390,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/nanquantile_native.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/maximum_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_foreach_sinh.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/special_multigammaln_native.h:
-
-/usr/include/c++/9/bits/ostream.tcc:
-
-/home/atharvmane/libtorch/include/ATen/ops/_test_autograd_multiple_dispatch.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_sparse_bsc_tensor_unsafe.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/reflection_pad3d.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/dist_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/leaky_relu_backward_ops.h:
-
-/usr/include/c++/9/bits/node_handle.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/_sparse_csr_tensor_unsafe_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/linalg_matrix_exp.h:
@@ -9407,6 +9403,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/gather_backward_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/abs_ops.h:
+
+/usr/include/c++/9/bits/unordered_map.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/count_nonzero_ops.h:
 
@@ -9451,104 +9449,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/_mkldnn_transpose_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/special_chebyshev_polynomial_t_meta.h:
-
-/home/atharvmane/libtorch/include/c10/util/irange.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/acos_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/embedding_backward_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/trace_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/replication_pad2d_backward_ops.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/syslimits.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/diagflat_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/geometric_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_nested_from_padded_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_histogramdd_from_bin_cts_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/native_channel_shuffle.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/log10_ops.h:
-
-/usr/include/wctype.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/special_log_ndtr_native.h:
-
-/usr/include/c++/9/bits/stringfwd.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/slogdet_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/to_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/core/builtin_function.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/polygamma_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_masked_scale.h:
-
-/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/nn/functional/upsampling.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_fused_moving_avg_obs_fq_helper_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/clamp_max_meta.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/fbgemm_linear_fp16_weight_fp32_activation_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/less_equal_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/data_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/mT_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/frobenius_norm.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_sparse_sum_backward_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/alias_copy.h:
-
-/usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/conv1d_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/divide_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/DimVector.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/eq_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_sparse_bsr_tensor_unsafe.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/equal_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/max_pool3d_with_indices_backward.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_sparse_softmax_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/erfc_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/erfinv_ops.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/avx2intrin.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/item_ops.h:
-
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/quantized_max_pool2d.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/exp2_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/digamma_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/special_i0e_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/special_log1p_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_foreach_cos_ops.h:
 
@@ -9746,10 +9646,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_embedding_bag_per_sample_weights_backward_native.h:
 
-/usr/include/opencv4/opencv2/videostab/outlier_rejection.hpp:
-
-/home/atharvmane/libtorch/include/ATen/ops/isfinite_ops.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/isnan_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_sparse_softmax.h:
@@ -9894,14 +9790,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_empty_affine_quantized_native.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/median_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/matrix_power.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/max_pool3d_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/prod_meta.h:
-
 /usr/include/c++/9/bits/mask_array.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_linalg_check_errors.h:
@@ -9952,6 +9840,10 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /usr/lib/gcc/x86_64-linux-gnu/9/include/stdalign.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/not_equal_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_linalg_slogdet_native.h:
+
 /home/atharvmane/libtorch/include/torch/csrc/profiler/orchestration/observer.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/or_ops.h:
@@ -9988,7 +9880,35 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/positive_ops.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/_validate_sparse_csr_tensor_args_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/slice_scatter_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/t_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/mkldnn_rnn_layer_backward_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/linalg_matrix_norm_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_lstm_mps.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/prod_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/special_hermite_polynomial_h_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/q_per_channel_axis_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_cudnn_rnn_backward_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/slice_copy_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_foreach_maximum.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/isposinf_meta.h:
+
+/usr/include/c++/9/bits/stl_tree.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/trace.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/q_per_channel_scales_ops.h:
 
@@ -10214,12 +10134,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/stft_ops.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/_fused_dropout_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_fft_r2c_native.h:
-
-/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/nn/module.h:
-
 /usr/include/x86_64-linux-gnu/c++/9/bits/c++locale.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/new_ones_ops.h:
@@ -10236,15 +10150,13 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/mish_ops.h:
 
+/home/atharvmane/libtorch/include/c10/core/impl/PythonDispatcherTLS.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_embedding_bag_backward.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/tan_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/index_select_backward_native.h:
-
-/home/atharvmane/libtorch/include/c10/core/DeviceGuard.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/tanh_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/trace_backward.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/to_dense_ops.h:
 
@@ -10348,15 +10260,7 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/unsafe_split_ops.h:
 
-/usr/include/c++/9/bits/locale_conv.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/adxintrin.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/fake_quantize_per_tensor_affine_cachemask_backward.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/_embedding_bag_backward_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/special_modified_bessel_i0_meta.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/diagonal.h:
 
@@ -10400,6 +10304,16 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/cos_meta.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/max_pool3d_with_indices_backward.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/erfc_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_sparse_softmax_ops.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/adxintrin.h:
+
+/usr/include/c++/9/bits/locale_conv.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/_saturate_weight_to_fp16_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/hardsigmoid_backward.h:
@@ -10438,6 +10352,10 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/core/type_ptr.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/special_modified_bessel_i0_meta.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_embedding_bag_backward_ops.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/nonzero_numpy_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/log1p_ops.h:
@@ -10464,6 +10382,10 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_foreach_sinh_native.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/logical_not.h:
+
+/usr/include/opencv4/opencv2/videostab/fast_marching.hpp:
+
 /home/atharvmane/libtorch/include/ATen/ops/hamming_window.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_embedding_bag_dense_backward.h:
@@ -10486,6 +10408,12 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/core/rref_interface.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/tanh_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/trace_backward.h:
+
+/home/atharvmane/libtorch/include/c10/core/DeviceGuard.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/_values_copy.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_embedding_bag.h:
@@ -10505,6 +10433,34 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/detail/ORTHooksInterface.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/lt.h:
+
+/usr/include/c++/9/bits/node_handle.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/leaky_relu_backward_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/mkldnn_adaptive_avg_pool2d_native.h:
+
+/usr/include/c++/9/bits/stl_set.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/triangular_solve_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/miopen_convolution_transpose_native.h:
+
+/usr/include/fenv.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/linalg_qr_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/EmptyTensor.h:
+
+/usr/include/c++/9/bits/shared_ptr.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_cufft_set_plan_cache_max_size.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_native_batch_norm_legit_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/linspace_ops.h:
+
+/usr/include/c++/9/bits/stl_multiset.h:
 
 /home/atharvmane/libtorch/include/c10/core/Allocator.h:
 
@@ -10530,6 +10486,12 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/torch/custom_class.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/to_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/core/builtin_function.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/polygamma_native.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/arctanh_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/diagonal_copy.h:
@@ -10545,12 +10507,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/special_digamma_ops.h:
 
 /home/atharvmane/libtorch/include/torch/custom_class_detail.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/multi_margin_loss_ops.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/cumprod_ops.h:
-
-/usr/local/cuda-12.1/include/texture_types.h:
 
 /home/atharvmane/libtorch/include/torch/csrc/autograd/anomaly_mode.h:
 
@@ -10776,9 +10732,9 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/TensorGeometry.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/flatten_native.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/_choose_qparams_per_tensor_ops.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/flatten_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/special_legendre_polynomial_p_ops.h:
 
@@ -10816,6 +10772,10 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_validate_sparse_bsr_tensor_args.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/kl_div.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_cslt_sparse_mm.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/_cslt_sparse_mm_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_nested_tensor_strides_native.h:
@@ -10838,6 +10798,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/squeeze_copy_native.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/matrix_exp_backward.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/_flash_attention_forward.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_cufft_clear_plan_cache.h:
@@ -10851,6 +10813,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/NamedTensor.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/matmul_backward_ops.h:
 
 /home/atharvmane/libtorch/include/c10/core/DeviceType.h:
 
@@ -10866,21 +10830,19 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/rrelu.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/matmul_backward_ops.h:
+/home/atharvmane/libtorch/include/ATen/ops/detach_copy_ops.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/matrix_exp_backward.h:
+/home/atharvmane/libtorch/include/ATen/ops/_embedding_bag_forward_only.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/matrix_exp_backward_ops.h:
+/home/atharvmane/libtorch/include/ATen/ops/sub_ops.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/max.h:
+/home/atharvmane/libtorch/include/ATen/ops/_embedding_bag_sparse_backward.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/_sparse_mm_reduce_impl.h:
+/home/atharvmane/libtorch/include/ATen/ops/_fused_dropout_ops.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/max_pool1d_ops.h:
+/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/nn/module.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/_amp_update_scale_native.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/max_pool1d_with_indices.h:
+/home/atharvmane/libtorch/include/ATen/ops/_fft_r2c_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/max_pool2d_backward_ops.h:
 
@@ -11324,9 +11286,9 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/q_per_channel_axis.h:
 
-/home/atharvmane/libtorch/include/c10/core/impl/TorchDispatchModeTLS.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/special_logit.h:
+
+/home/atharvmane/libtorch/include/c10/core/impl/TorchDispatchModeTLS.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/q_per_channel_zero_points.h:
 
@@ -11823,6 +11785,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/special_i1e_ops.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/special_laguerre_polynomial_l.h:
+
+/usr/include/opencv4/opencv2/videostab/stabilizer.hpp:
 
 /home/atharvmane/libtorch/include/ATen/ops/special_log1p.h:
 
@@ -12404,9 +12368,9 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/_add_relu_native.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/_sparse_coo_tensor_with_dims.h:
-
 /usr/local/cuda-12.1/include/cuda_runtime_api.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_sparse_coo_tensor_with_dims.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/argsort_ops.h:
 
@@ -12680,8 +12644,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/fft_rfftn_native.h:
 
-/home/atharvmane/libtorch/include/c10/cuda/CUDACachingAllocator.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/_make_per_tensor_quantized_tensor_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/poisson_nll_loss_native.h:
@@ -12943,8 +12905,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/_upsample_nearest_exact2d_meta.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_upsample_nearest_exact2d_backward_native.h:
-
-/home/atharvmane/libtorch/include/c10/cuda/CUDAGraphsC10Utils.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/kthvalue_ops.h:
 
@@ -13400,6 +13360,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/dropout_native.h:
 
+/home/atharvmane/libtorch/include/ATen/ops/dstack_native.h:
+
 /home/atharvmane/libtorch/include/ATen/ops/elu_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/fractional_max_pool2d_backward_meta.h:
@@ -13635,6 +13597,10 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/diagflat_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/uniform_native.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/_use_cudnn_ctc_loss_native.h:
+
+/usr/include/opencv4/opencv2/videostab/motion_stabilizing.hpp:
 
 /home/atharvmane/libtorch/include/ATen/ops/trunc.h:
 
@@ -13999,10 +13965,6 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/ATen/ops/special_xlog1py_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/miopen_depthwise_convolution_native.h:
-
-/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/data/datasets.h:
-
-/home/atharvmane/libtorch/include/ATen/ops/mkldnn_adaptive_avg_pool2d_backward_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/_nested_select_backward.h:
 
@@ -14576,6 +14538,8 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/nn/modules/container/modulelist.h:
 
+/usr/include/opencv4/opencv2/videostab/motion_core.hpp:
+
 /home/atharvmane/libtorch/include/ATen/ops/split_with_sizes_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/new_full_native.h:
@@ -14618,9 +14582,9 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 
 /home/atharvmane/libtorch/include/ATen/ops/t_copy_native.h:
 
-/home/atharvmane/libtorch/include/ATen/ops/sspaddmm_native.h:
-
 /home/atharvmane/libtorch/include/ATen/ops/matmul_backward.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/sspaddmm_native.h:
 
 /home/atharvmane/libtorch/include/ATen/ops/take_native.h:
 
@@ -14829,6 +14793,10 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /home/atharvmane/libtorch/include/torch/csrc/api/include/torch/data/iterator.h:
 
 /home/atharvmane/libtorch/include/torch/csrc/utils/memory.h:
+
+/home/atharvmane/libtorch/include/ATen/ops/mkldnn_adaptive_avg_pool2d_backward_native.h:
+
+/home/atharvmane/libtorch/include/torch/csrc/api/include/torch/data/datasets.h:
 
 /home/atharvmane/libtorch/include/torch/csrc/jit/ir/attributes.h:
 
@@ -15369,3 +15337,19 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: /home/atharvmane/cudaTorchSIFT/src/s
 /usr/include/opencv4/opencv2/stitching/detail/camera.hpp:
 
 /usr/include/opencv4/opencv2/superres/optical_flow.hpp:
+
+/usr/include/opencv4/opencv2/video.hpp:
+
+/home/atharvmane/libtorch/include/ATen/ops/_thnn_differentiable_gru_cell_backward.h:
+
+/usr/include/opencv4/opencv2/video/background_segm.hpp:
+
+/usr/include/opencv4/opencv2/videostab/global_motion.hpp:
+
+/home/atharvmane/libtorch/include/ATen/ops/isfinite_ops.h:
+
+/usr/include/opencv4/opencv2/videostab/outlier_rejection.hpp:
+
+/usr/include/opencv4/opencv2/videostab/frame_source.hpp:
+
+/usr/include/opencv4/opencv2/videostab/inpainting.hpp:
