@@ -9,7 +9,7 @@
 #include <opencv4/opencv2/imgcodecs/imgcodecs.hpp>
 #include <string>
 #include <cuda_runtime.h>
-#include "keypoints_with_gradients.h"
+#include <keypoints_with_gradients.cuh>
 #include <math_constants.h>
 #include <math.h>
 namespace F = torch::nn::functional;
@@ -31,7 +31,6 @@ torch::Tensor cvImgToTorchTensor(cv::Mat img, torch::DeviceType device){
     }else if(img.channels()==4){
         img.convertTo(img,CV_64FC4, 1.0f/255.0f);
     }
-    
     torch::Tensor imgTensor = torch::from_blob(img.data,{img.rows,img.cols,img.channels()}, torch::TensorOptions().dtype(torch::kFloat64)).clone();
     return imgTensor.to(device).index({None}).permute({0,3,1,2});
 }
@@ -81,7 +80,7 @@ torch::Tensor getGaussianKernel(size_t size, double sigma, torch::DeviceType dev
     }else{
         throw std::runtime_error("GAUSSIAN Kernel MUST have a ODD size.");
     }
-    
+
 }
 
 torch::Tensor getGaussianMultiKernel(size_t size, torch::Tensor sigmas, torch::DeviceType device){
@@ -115,7 +114,7 @@ void batchImshow(torch::Tensor imgBatch, std::string type, bool normalize){
             img = img.cpu().clone();
             cv::Mat cvImg = tensorToMatGray(img, normalize);
             cv::imshow(type, cvImg);
-            cv::waitKey();
+            cv::waitKey(0.5);
         }
     }
 }
@@ -129,15 +128,22 @@ torch::Tensor getInitExtremaLocs(torch::Tensor diffGauss){
     return torch::stack(torch::where(diffGaussExtremas.index({Slice(),0}))).t();
 }
 
-torch::Tensor getGrads(torch::DeviceType device){
-    torch::Tensor grader = torch::zeros({3,3,3,3},torch::TensorOptions().dtype(torch::kFloat64).device(device));
-    grader[0][1][1][0]=-0.5;
-    grader[0][1][1][2]=0.5;
-    grader[1][1][0][1]=-0.5;
-    grader[1][1][2][1]=0.5;
-    grader[2][0][1][1]=-0.5;
-    grader[2][2][1][1]=0.5;
-    return grader;
+torch::Tensor getGrads(torch::Tensor input, torch::DeviceType device){
+    // std::cout<<"\n\n\n"<<std::endl;
+
+    torch::Tensor grader3D = torch::tensor({{{{{-0.5,0.0,0.5}}}}},torch::TensorOptions().device(device).dtype(torch::kFloat64));
+    torch::Tensor inputPadded = F::pad(input, F::PadFuncOptions({1,1,1,1,1,1}).mode(torch::kReflect));
+    torch::Tensor grads = torch::zeros_like(input).repeat({1,3,1,1,1});
+    coutTensorShape( input.sizes(),"input");
+
+    grads.index({Slice(),0}) = F::conv3d(inputPadded.index({Slice(),Slice(),Slice(1,-1),Slice(1,-1),Slice()}), grader3D).index({Slice(),0});
+    grads.index({Slice(),1}) = F::conv3d(inputPadded.index({Slice(),Slice(),Slice(1,-1),Slice(),Slice(1,-1)}), grader3D.permute({0,1,2,4,3})).index({Slice(),0});
+    grads.index({Slice(),2}) = F::conv3d(inputPadded.index({Slice(),Slice(),Slice(),Slice(1,-1),Slice(1,-1)}), grader3D.permute({0,1,4,3,2})).index({Slice(),0});
+    // coutTensorShape(F::conv3d(inputPadded.index({Slice(),Slice(),Slice(1,-1),Slice(1,-1),Slice()}), grader3D)[0].sizes(),"gconvD");
+    // batchImshow(10*grads.index({Slice(),0}),"rrrrrrrrrrrrrrrrrrrrrrrrr", true);
+    
+    // std::cout<<"hihihihihihihi\n\n\n"<<std::endl;
+    return grads;
 }
 
 torch::Tensor getImageBoundMask(torch::Tensor ls, torch::Tensor dogs){
@@ -149,7 +155,6 @@ torch::Tensor getImageBoundMask(torch::Tensor ls, torch::Tensor dogs){
 torch::Tensor getCoordResponses(torch::Tensor coords,torch::Tensor gradients, torch::Tensor dogs){
   torch::Tensor xHats=coords%1;
   torch::Tensor z=coords-xHats;
-  //std::cout<<coords<<"\nzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"<<std::endl;
   z=z.to(torch::kLong);
   return dogs.index({z.index({Slice(),0}), 0,z.index({Slice(),1}),z.index({Slice(),2})})+ 0.5*torch::einsum("ni,in->n",{coords,gradients.index({Slice(),z.index({Slice(),0}),z.index({Slice(),1}),z.index({Slice(),2})})});
 }
@@ -157,44 +162,30 @@ torch::Tensor getCoordResponses(torch::Tensor coords,torch::Tensor gradients, to
 
 torch::Tensor getKeypoints(torch::Tensor diffGauss, int octaveIndex, torch::DeviceType device){
     torch::Tensor diffGaussExtremaLocs = getInitExtremaLocs(diffGauss);
-    torch::Tensor grader = getGrads(device);
-
-    torch::Tensor diffGaussPadded = F::pad(diffGauss.permute({1,0,2,3}), F::PadFuncOptions({1,1,1,1,1,1}).mode(torch::kReflect));
-    torch::Tensor grads =F::conv3d(diffGaussPadded, grader.index({Slice(),None}));
-    torch::Tensor doubleGrads = F::conv3d(F::pad(grads,F::PadFuncOptions({1,1,1,1,1,1})).index({Slice(),None}), grader.index({Slice(),None}));
+    torch::Tensor grads = getGrads(diffGauss.permute({1,0,2,3}).index({None}),device);
+    torch::Tensor doubleGrads = getGrads(grads.permute({1,0,2,3,4}), device);
     doubleGrads = doubleGrads.permute({2,3,4,0,1});
-    grads = grads.permute({1,2,3,0});
+    grads = grads[0].permute({1,2,3,0});
     torch::Tensor finalDiffGaussExtremaLocs = torch::empty({0,3}, torch::TensorOptions().device(device).dtype(torch::kFloat64));
-
-    // int numIter = 10;
-
-    for(int mnop=0;mnop<5;mnop++){
-        
+    int numIter = 10;
+    for(int mnop=0;mnop<2;mnop++){
         torch::Tensor doubleGradsSelected = doubleGrads.index({diffGaussExtremaLocs.index({Slice(),0}),diffGaussExtremaLocs.index({Slice(),1}),diffGaussExtremaLocs.index({Slice(),2})});
         torch::Tensor detMask = doubleGradsSelected.det()!=0.0;
         doubleGradsSelected = doubleGradsSelected.index({detMask});
         diffGaussExtremaLocs = diffGaussExtremaLocs.index({detMask});
         torch::Tensor doubleGradsInv = doubleGradsSelected.inverse();
-        
         torch::Tensor gradsSelected = grads.index({diffGaussExtremaLocs.index({Slice(),0}),diffGaussExtremaLocs.index({Slice(),1}),diffGaussExtremaLocs.index({Slice(),2})});
         torch::Tensor xHats = torch::einsum("nij,nj->ni", {doubleGradsInv, gradsSelected});
         diffGaussExtremaLocs = xHats + diffGaussExtremaLocs.to(torch::kFloat64);
-        
-        
-        
         torch::Tensor finalMask = (torch::abs(xHats.index({Slice(),0}))<0.5)*(torch::abs(xHats.index({Slice(),1}))<0.5)*(torch::abs(xHats.index({Slice(),2}))<0.5);
         finalDiffGaussExtremaLocs = torch::cat({finalDiffGaussExtremaLocs, diffGaussExtremaLocs.index({finalMask})});
         diffGaussExtremaLocs = torch::round(diffGaussExtremaLocs.index({finalMask==0})).to(torch::kLong);
         torch::Tensor mask = getImageBoundMask(diffGaussExtremaLocs, diffGauss);
         diffGaussExtremaLocs = diffGaussExtremaLocs.index({mask});
-        //std::cout<<diffGaussExtremaLocs<<std::endl;
-        //std::cout<<"\n\n\n\n\n";
+        // coutTensorShape(finalDiffGaussExtremaLocs.sizes(),"finalDiffGaussExtremaLocs");
     }
-    
     torch::Tensor resp = getCoordResponses(finalDiffGaussExtremaLocs, grads.permute({3,0,1,2}), diffGauss);
-
     torch::Tensor l = (torch::abs(resp))>0.05;
-    std::cout<<"\n\n\n\n\n\nbefore ret"<<std::endl;
     torch::Tensor ret = finalDiffGaussExtremaLocs.index({l});
     resp = resp.index({l});
     torch::Tensor ret_r=(ret-ret%1).to(torch::kLong);
@@ -205,15 +196,16 @@ torch::Tensor getKeypoints(torch::Tensor diffGauss, int octaveIndex, torch::Devi
     ret=ret.index({r});
     resp=resp.index({r});
     torch::Tensor octave_info = torch::full(ret.size(0), octaveIndex, torch::TensorOptions().device(device));
-    // print(resp[:,None].shape,"\n", octave_info[:,None].shape,"\n", ret.shape)
     ret=torch::cat({resp.index({Slice(),None}), octave_info.index({Slice(),None}), ret}, 1);
-    return diffGaussExtremaLocs;
+    // coutTensorShape(ret.sizes(),"ret");
+    // return ret;
+    return ret;
 }
 
 cv::Mat draw_angled_rec(double x0, double y0, double width, double height, double angle, cv::Mat img){
     width*=2;
     height*=2;
-    double _angle = angle * CUDART_PI_HI/ 180.0;
+    double _angle = (angle+135) * CUDART_PI_HI/ 180.0;
     double b = cos(_angle) * 0.5;
     double a = sin(_angle) * 0.5;
     cv::Point2i pt0 = {(int)(x0 - a * height - b * width),(int)(y0 + b * height - a * width)};
@@ -234,67 +226,73 @@ cv::Mat draw_angled_rec(double x0, double y0, double width, double height, doubl
 
 }
 
+
 void showKeypoints(cv::Mat img, torch::Tensor keypoints){
     keypoints = keypoints.cpu();
     cv::Mat imgCopy;
     img.copyTo(imgCopy);
+    torch::Tensor power = torch::exp2(keypoints.index({Slice(),1}).reciprocal());
     for(int i=0;i<keypoints.size(0);i++){
-        imgCopy = draw_angled_rec(keypoints[i][4].item().toDouble(),keypoints[i][3].item().toDouble(),5*keypoints[i][2].item().toDouble(),5*keypoints[i][2].item().toDouble(), keypoints[i][5].item().toDouble(), imgCopy);
+        
+        imgCopy = draw_angled_rec(keypoints[i][4].item().toDouble()*power[i].item().toDouble(),keypoints[i][3].item().toDouble()*power[i].item().toDouble(),5*keypoints[i][2].item().toDouble(),5*keypoints[i][2].item().toDouble(), keypoints[i][5].item().toDouble(), imgCopy);
         // cv::circle(imgCopy, {keypoints[i][4].item().toDouble(),keypoints[i][3].item().toDouble()}, 5*keypoints[i][2].item().toDouble(), {0,255,0}, 1);
     }
     cv::imshow("keypoints",imgCopy);
-    cv::waitKey(2);
+    cv::waitKey(100);
 }
 
-int main(int argc, char** argv){
-    torch::DeviceType device = torch::kCPU;//torch::cuda::is_available() ? torch::kCUDA : torch::kCPU;
-    cv::VideoCapture camera = cv::VideoCapture(0);
-    cv::Mat img;
-    while(true){
-        camera.read(img);
-        // cv::Mat img = cv::imread("/home/atharvmane/Pictures/Screenshot from 2023-01-04 02-10-26-new(1).png", cv::IMREAD_UNCHANGED);
-        torch::Tensor imgTensor = cvImgToTorchTensor(img, device);
-        imgTensor = 0.2989 * imgTensor.index({Slice(),2}) + 0.5870 * imgTensor.index({Slice(),1}) + 0.1140 * imgTensor.index({Slice(),0});
-        imgTensor = imgTensor.index({Slice(),None});
-        
-        
-        torch::Tensor gaussSigmas;
-        int gaussKernelSize;
-        std::tie<torch::Tensor, int>(gaussSigmas,gaussKernelSize) =  getGaussianScales(3, 1.6, device);
-        int gaussHalf = gaussKernelSize/2;
+// int main(int argc, char** argv){
+//     std::chrono::time_point<std::chrono::high_resolution_clock> starttime,endtime;
 
-        
-        torch::Tensor gaussianKernels = getGaussianMultiKernel(gaussKernelSize, gaussSigmas, device);
-        
-        
-        imgTensor = F::pad(imgTensor, F::PadFuncOptions({gaussHalf,gaussHalf,gaussHalf,gaussHalf}).mode(torch::enumtype::kReflect()));
-        
-        
-        torch::Tensor gaussBlurs = F::conv2d(imgTensor, gaussianKernels).permute({1,0,2,3});
-        
-        
-        torch::Tensor diffGauss = (gaussBlurs.index({Slice(0,-1),"..."}))-(gaussBlurs.index({Slice(1,None),"..."}));
-        
-        
+//     torch::DeviceType device = torch::cuda::is_available() ? torch::kCUDA : torch::kCPU;
+//     cv::Mat img;
+//     cv::VideoCapture camera = cv::VideoCapture(0);
+//     while(true){
+//         starttime = std::chrono::high_resolution_clock::now();
+//         camera.read(img);
+//         //img = cv::imread("/home/atharvmane/Pictures/Screenshot from 2023-01-04 02-10-26-new(1).png", cv::IMREAD_UNCHANGED);
+//         torch::Tensor imgTensor = cvImgToTorchTensor(img, device);
+//         imgTensor = 0.2989 * imgTensor.index({Slice(),2}) + 0.5870 * imgTensor.index({Slice(),1}) + 0.1140 * imgTensor.index({Slice(),0});
+//         imgTensor = imgTensor.index({Slice(),None});
 
-        torch::Tensor keypoints = getKeypoints(diffGauss, 0, device);
-        
 
-        // showKeypoints(img,keypoints);
-        torch::Tensor gaussBlursPadded = F::pad(gaussBlurs,F::PadFuncOptions({1,1,1,1}).mode(torch::kReflect));
-        torch::Tensor grader2D = torch::tensor({{{{0.,0.,0.},{-0.5,0.,0.5},{0.,0.,0.}}},{{{0.,-0.5,0.},{0.,0.,0.},{0.,0.5,0.}}}}, torch::TensorOptions().device(device).dtype(torch::kFloat64));
-        torch::Tensor gaussGrads = torch::conv2d(gaussBlursPadded, grader2D);
-        torch::Tensor gaussGradsMags = torch::sqrt(torch::square(gaussGrads.index({Slice(),0}))+torch::square(gaussGrads.index({Slice(),1})));
-        torch::Tensor gaussGradsDirs = (torch::atan2(gaussGrads.index({Slice(),1}), gaussGrads.index({Slice(),0}))*180*CUDART_2_OVER_PI);
-        torch::Tensor directionHistogram = keypointsWithGradients(keypoints, gaussGradsMags, gaussGradsDirs, 10, 1.6, 3, 3);
-        torch::Tensor directionMask = std::get<0>(torch::max(directionHistogram,1)).index({Slice(),None});
-        directionMask = ((0.8*directionMask).repeat({1,directionHistogram.size(1)})<directionHistogram);
-        std::vector<torch::Tensor> direcs=torch::where(directionMask);
-        torch::Tensor keypointsWithGradientsTensor = keypoints.index({direcs[0]});
-        keypointsWithGradientsTensor = torch::cat({keypointsWithGradientsTensor,direcs[1].index({Slice(),None})*10},1);
-        
+//         torch::Tensor gaussSigmas;
+//         int gaussKernelSize;
+//         std::tie<torch::Tensor, int>(gaussSigmas,gaussKernelSize) =  getGaussianScales(3, 1.6, device);
+//         int gaussHalf = gaussKernelSize/2;
+//         torch::Tensor gaussianKernels = getGaussianMultiKernel(gaussKernelSize, gaussSigmas, device);
+//         imgTensor = F::pad(imgTensor, F::PadFuncOptions({gaussHalf,gaussHalf,gaussHalf,gaussHalf}).mode(torch::enumtype::kReflect()));
+//         torch::Tensor gaussBlurs = F::conv2d(imgTensor, gaussianKernels).permute({1,0,2,3});
+//         torch::Tensor diffGauss = (gaussBlurs.index({Slice(0,-1),"..."}))-(gaussBlurs.index({Slice(1,None),"..."}));
 
-        showKeypoints(img, keypointsWithGradientsTensor);
-    }
-    return 0;
-}
+
+//         torch::Tensor keypoints = getKeypoints(diffGauss, 0, device);
+
+//         // // showKeypoints(img,keypoints);'
+//         // std::cout<<keypoints<<std::endl;
+//         torch::Tensor gaussBlursPadded = F::pad(gaussBlurs,F::PadFuncOptions({1,1,1,1}).mode(torch::kReflect));
+//         torch::Tensor grader2D = torch::tensor({{{{0.,0.,0.},{-0.5,0.,0.5},{0.,0.,0.}}},{{{0.,-0.5,0.},{0.,0.,0.},{0.,0.5,0.}}}}, torch::TensorOptions().device(device).dtype(torch::kFloat64));
+//         torch::Tensor gaussGrads = torch::conv2d(gaussBlursPadded, grader2D);
+//         torch::Tensor gaussGradsMags = torch::sqrt(torch::square(gaussGrads.index({Slice(),0}))+torch::square(gaussGrads.index({Slice(),1})));
+//         torch::Tensor gaussGradsDirs = (torch::atan2(gaussGrads.index({Slice(),1}), gaussGrads.index({Slice(),0}))*180*CUDART_2_OVER_PI);
+
+//         // // coutTensorShape(gaussGradsMags.sizes(),"gaussGradsMags");
+//         // // coutTensorShape(gaussGradsDirs.sizes(),"gaussGradsDirs");
+
+
+//         torch::Tensor directionHistogram = keypointsWithGradientsAndDescriptors(keypoints, gaussGradsMags, gaussGradsDirs, 10, 1.6, 3, 3);
+        // torch::Tensor directionMask = std::get<0>(torch::max(directionHistogram,1)).index({Slice(),None});
+        // directionMask = ((0.8*directionMask).repeat({1,directionHistogram.size(1)})<directionHistogram);
+        // std::vector<torch::Tensor> direcs=torch::where(directionMask);
+        // torch::Tensor keypointsWithGradientsTensor = keypoints.index({direcs[0]});
+        // keypointsWithGradientsTensor = torch::cat({keypointsWithGradientsTensor,direcs[1].index({Slice(),None})*10},1);
+
+//         // showKeypoints(img, keypointsWithGradientsTensor);
+//         // endtime = std::chrono::high_resolution_clock::now();
+//         // auto st = std::chrono::time_point_cast<std::chrono::nanoseconds>(starttime).time_since_epoch().count();
+//         // auto et = std::chrono::time_point_cast<std::chrono::nanoseconds>(endtime).time_since_epoch().count();
+//         // c10::cuda::CUDACachingAllocator::emptyCache();
+//         // std::cout<<"runtime: "<<(et-st)/1000000000.0<<" fps: "<<1000000000.0/(et-st)<<std::endl;
+// } 
+//     return 0;
+// }

@@ -8,7 +8,8 @@
                 "/usr/include/opencv4",
                 "/home/atharvmane/libtorch/include",
                 "/usr/local/cuda-12.1/include",
-                "/home/atharvmane/libtorch/include/torch/csrc/api/include"
+                "/home/atharvmane/libtorch/include/torch/csrc/api/include",
+                "${workspaceFolder}/include"
             ],
             "defines": [],
             "cStandard": "c17",

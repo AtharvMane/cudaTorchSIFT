@@ -65,7 +65,8 @@ CMAKE_BINARY_DIR = /home/atharvmane/cudaTorchSIFT/build
 # The main recursive "all" target.
 all: CMakeFiles/kpsCUDA.dir/all
 all: CMakeFiles/kpsCPU.dir/all
-all: CMakeFiles/a.out.dir/all
+all: CMakeFiles/siftFuncs.dir/all
+all: CMakeFiles/b.out.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -75,7 +76,8 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/kpsCUDA.dir/clean
 clean: CMakeFiles/kpsCPU.dir/clean
-clean: CMakeFiles/a.out.dir/clean
+clean: CMakeFiles/siftFuncs.dir/clean
+clean: CMakeFiles/b.out.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -131,31 +133,59 @@ CMakeFiles/kpsCPU.dir/clean:
 .PHONY : CMakeFiles/kpsCPU.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/a.out.dir
+# Target rules for target CMakeFiles/siftFuncs.dir
 
 # All Build rule for target.
-CMakeFiles/a.out.dir/all: CMakeFiles/kpsCUDA.dir/all
-CMakeFiles/a.out.dir/all: CMakeFiles/kpsCPU.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atharvmane/cudaTorchSIFT/build/CMakeFiles --progress-num=1,2,3 "Built target a.out"
-.PHONY : CMakeFiles/a.out.dir/all
+CMakeFiles/siftFuncs.dir/all: CMakeFiles/kpsCUDA.dir/all
+CMakeFiles/siftFuncs.dir/all: CMakeFiles/kpsCPU.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/siftFuncs.dir/build.make CMakeFiles/siftFuncs.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/siftFuncs.dir/build.make CMakeFiles/siftFuncs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atharvmane/cudaTorchSIFT/build/CMakeFiles --progress-num=9,10 "Built target siftFuncs"
+.PHONY : CMakeFiles/siftFuncs.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/a.out.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/atharvmane/cudaTorchSIFT/build/CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/a.out.dir/all
+CMakeFiles/siftFuncs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/atharvmane/cudaTorchSIFT/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/siftFuncs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/atharvmane/cudaTorchSIFT/build/CMakeFiles 0
-.PHONY : CMakeFiles/a.out.dir/rule
+.PHONY : CMakeFiles/siftFuncs.dir/rule
 
 # Convenience name for target.
-a.out: CMakeFiles/a.out.dir/rule
-.PHONY : a.out
+siftFuncs: CMakeFiles/siftFuncs.dir/rule
+.PHONY : siftFuncs
 
 # clean rule for target.
-CMakeFiles/a.out.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/clean
-.PHONY : CMakeFiles/a.out.dir/clean
+CMakeFiles/siftFuncs.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/siftFuncs.dir/build.make CMakeFiles/siftFuncs.dir/clean
+.PHONY : CMakeFiles/siftFuncs.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/b.out.dir
+
+# All Build rule for target.
+CMakeFiles/b.out.dir/all: CMakeFiles/kpsCUDA.dir/all
+CMakeFiles/b.out.dir/all: CMakeFiles/kpsCPU.dir/all
+CMakeFiles/b.out.dir/all: CMakeFiles/siftFuncs.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b.out.dir/build.make CMakeFiles/b.out.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b.out.dir/build.make CMakeFiles/b.out.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atharvmane/cudaTorchSIFT/build/CMakeFiles --progress-num=1,2,3 "Built target b.out"
+.PHONY : CMakeFiles/b.out.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/b.out.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/atharvmane/cudaTorchSIFT/build/CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/b.out.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/atharvmane/cudaTorchSIFT/build/CMakeFiles 0
+.PHONY : CMakeFiles/b.out.dir/rule
+
+# Convenience name for target.
+b.out: CMakeFiles/b.out.dir/rule
+.PHONY : b.out
+
+# clean rule for target.
+CMakeFiles/b.out.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b.out.dir/build.make CMakeFiles/b.out.dir/clean
+.PHONY : CMakeFiles/b.out.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

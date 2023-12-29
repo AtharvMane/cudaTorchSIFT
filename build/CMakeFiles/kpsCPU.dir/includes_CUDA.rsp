@@ -1,1 +1,1 @@
--I/usr/include/opencv4 -isystem=/home/atharvmane/libtorch/include -isystem=/home/atharvmane/libtorch/include/torch/csrc/api/include -isystem="/usr/local/cuda-12.1/include"
+-I/usr/include/opencv4 -I/home/atharvmane/cudaTorchSIFT/include -isystem=/home/atharvmane/libtorch/include -isystem=/home/atharvmane/libtorch/include/torch/csrc/api/include -isystem="/usr/local/cuda-12.1/include"

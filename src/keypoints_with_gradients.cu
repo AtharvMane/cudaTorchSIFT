@@ -2,23 +2,22 @@
 #include<torch/torch.h>
 #include <ATen/ATen.h>
 #include <iostream>
-#include "keypoints_with_gradients.h"
+#include "keypoints_with_gradients.cuh"
 #include <cuda_runtime.h>
 #include <cooperative_groups.h>
 namespace cg = cooperative_groups;
+
 __global__ void doSomethingBranchCUDA(int parentIdx){
     int idx=blockIdx.x*blockDim.x+threadIdx.x+1;
     printf("ParentIdx: %d, BranchIdx: %d", parentIdx, idx);
 }
+
 __global__ void doSomethingCUDA(){
     int idx=blockIdx.x*blockDim.x+threadIdx.x+1;
     doSomethingBranchCUDA<<<1,idx>>>(idx);
 }
 
-// __device__ dim3 selectorThreads;
-// __device__ int diam;
-// __device__ int x,y,z;
-// __device__ double* img_weights;
+
 __global__ void createSingleWeightTile(torch::PackedTensorAccessor64<double,3> gradMagsAccessor, cudaPitchedPtr devPitchedPtr, long pointNum, int diam, int xCenter, int yCenter, int zCenter, int xLim, int yLim, double sigmaInv){
     int x = blockIdx.x*blockDim.x+threadIdx.x;
     int y = blockIdx.y*blockDim.y+threadIdx.y;
@@ -69,6 +68,11 @@ __global__ void createHistogram(cudaPitchedPtr devPitchedPtr, torch::PackedTenso
     for(int n=0;n<2*radius;n++){
         double* row = (double*) (plane + n*pitch);
         for(int m=0;m<2*radius;m++){
+            if(gradDirsAccessor[z][y+n-radius][x+m-radius]>36 || gradDirsAccessor[z][y+n-radius][x+m-radius]<0){
+                printf("Needed idx: %d",gradDirsAccessor[z][y+n-radius][x+m-radius]);
+            }
+            // directionHistogramAccessor[idx][gradDirsAccessor[z][y+n-radius][x+m-radius]]=1;
+            // gradDirsAccessor[z][y+n-radius][x+m-radius]=10;
             directionHistogramAccessor[idx][gradDirsAccessor[z][y+n-radius][x+m-radius]] += row[m];
         }
     }

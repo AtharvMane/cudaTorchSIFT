@@ -143,17 +143,54 @@ kpsCPU/fast:
 .PHONY : kpsCPU/fast
 
 #=============================================================================
-# Target rules for targets named a.out
+# Target rules for targets named siftFuncs
 
 # Build rule for target.
-a.out: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 a.out
-.PHONY : a.out
+siftFuncs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 siftFuncs
+.PHONY : siftFuncs
 
 # fast build rule for target.
-a.out/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/build
-.PHONY : a.out/fast
+siftFuncs/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/siftFuncs.dir/build.make CMakeFiles/siftFuncs.dir/build
+.PHONY : siftFuncs/fast
+
+#=============================================================================
+# Target rules for targets named b.out
+
+# Build rule for target.
+b.out: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 b.out
+.PHONY : b.out
+
+# fast build rule for target.
+b.out/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b.out.dir/build.make CMakeFiles/b.out.dir/build
+.PHONY : b.out/fast
+
+src/SIFT.o: src/SIFT.cpp.o
+.PHONY : src/SIFT.o
+
+# target to build an object file
+src/SIFT.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b.out.dir/build.make CMakeFiles/b.out.dir/src/SIFT.cpp.o
+.PHONY : src/SIFT.cpp.o
+
+src/SIFT.i: src/SIFT.cpp.i
+.PHONY : src/SIFT.i
+
+# target to preprocess a source file
+src/SIFT.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b.out.dir/build.make CMakeFiles/b.out.dir/src/SIFT.cpp.i
+.PHONY : src/SIFT.cpp.i
+
+src/SIFT.s: src/SIFT.cpp.s
+.PHONY : src/SIFT.s
+
+# target to generate assembly for a file
+src/SIFT.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/b.out.dir/build.make CMakeFiles/b.out.dir/src/SIFT.cpp.s
+.PHONY : src/SIFT.cpp.s
 
 src/keypoints_with_gradients.o: src/keypoints_with_gradients.cu.o
 .PHONY : src/keypoints_with_gradients.o
@@ -208,7 +245,7 @@ src/sift_functs.o: src/sift_functs.cpp.o
 
 # target to build an object file
 src/sift_functs.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/sift_functs.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/siftFuncs.dir/build.make CMakeFiles/siftFuncs.dir/src/sift_functs.cpp.o
 .PHONY : src/sift_functs.cpp.o
 
 src/sift_functs.i: src/sift_functs.cpp.i
@@ -216,7 +253,7 @@ src/sift_functs.i: src/sift_functs.cpp.i
 
 # target to preprocess a source file
 src/sift_functs.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/sift_functs.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/siftFuncs.dir/build.make CMakeFiles/siftFuncs.dir/src/sift_functs.cpp.i
 .PHONY : src/sift_functs.cpp.i
 
 src/sift_functs.s: src/sift_functs.cpp.s
@@ -224,7 +261,7 @@ src/sift_functs.s: src/sift_functs.cpp.s
 
 # target to generate assembly for a file
 src/sift_functs.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/sift_functs.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/siftFuncs.dir/build.make CMakeFiles/siftFuncs.dir/src/sift_functs.cpp.s
 .PHONY : src/sift_functs.cpp.s
 
 # Help Target
@@ -235,9 +272,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... a.out"
+	@echo "... b.out"
 	@echo "... kpsCPU"
 	@echo "... kpsCUDA"
+	@echo "... siftFuncs"
+	@echo "... src/SIFT.o"
+	@echo "... src/SIFT.i"
+	@echo "... src/SIFT.s"
 	@echo "... src/keypoints_with_gradients.o"
 	@echo "... src/keypoints_with_gradients.i"
 	@echo "... src/keypoints_with_gradients.s"

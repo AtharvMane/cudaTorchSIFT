@@ -24,11 +24,17 @@ message("CXX FLAGS=${CMAKE_CXX_FLAGS}")
 message("TORCH FLAGS=${TORCH_CXX_FLAGS}")
 
 message("CUDA FLAGS=${CMAKE_CUDA_FLAGS}")
+include_directories(include)
 add_library(kpsCUDA STATIC src/keypoints_with_gradients.cu)
 target_link_libraries(kpsCUDA ${TORCH_LIBRARIES})
 add_library(kpsCPU SHARED src/keypoints_with_gradients_cpu.cu)
 target_link_libraries(kpsCPU PUBLIC kpsCUDA)
 
-add_executable(a.out src/sift_functs.cpp)
+add_library(siftFuncs src/sift_functs.cpp)
 
-target_link_libraries(a.out kpsCPU ${TORCH_LIBRARIES} ${OpenCV_LIBRARIES})
+target_link_libraries(siftFuncs kpsCPU ${TORCH_LIBRARIES} ${OpenCV_LIBRARIES})
+
+
+add_executable(b.out src/SIFT.cpp)
+
+target_link_libraries(b.out siftFuncs kpsCPU ${TORCH_LIBRARIES} ${OpenCV_LIBRARIES})

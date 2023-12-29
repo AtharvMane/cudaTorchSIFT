@@ -2,27 +2,24 @@
 #include<torch/torch.h>
 #include <ATen/ATen.h>
 #include <iostream>
-#include "keypoints_with_gradients.h"
+#include "keypoints_with_gradients.cuh"
 #include <cuda_runtime.h>
-
-// void do_something(){
-//     std::cout<<"doing_something"<<std::endl;
-//     doSomethingCUDA<<<1,3>>>();
-// }
 
 using namespace torch::indexing;
 
-torch::Tensor keypointsWithGradients(at::Tensor keypoints, at::Tensor gaussGradMags, at::Tensor gaussGradDirs, int granularity, double initialSigma, double scaleFactor, int numIntervals){
+torch::Tensor keypointsWithGradientsAndDescriptors(at::Tensor keypoints, at::Tensor gaussGradMags, at::Tensor gaussGradDirs, int granularity, double initialSigma, double scaleFactor, int numIntervals){
     assert(keypoints.is_contiguous() && keypoints.is_cuda());
     assert(gaussGradMags.is_contiguous() && gaussGradMags.is_cuda());
     assert(gaussGradDirs.is_contiguous() && gaussGradDirs.is_cuda());
 
     torch::Tensor directionHistogram =torch::zeros({keypoints.size(0), (int)(360/granularity)+1}, torch::TensorOptions().dtype(torch::kDouble).device(torch::kCUDA));
-
     gaussGradDirs = (gaussGradDirs/granularity).to(torch::kInt);
 
+    //coutTensorShape(directionHistogram.sizes(), "directionHistogram");
     torch::Tensor scales = scaleFactor * initialSigma * torch::exp2(keypoints.index({Slice(),2})/numIntervals);
     torch::Tensor radii = 4*scales;
+    // coutTensorShape(keypoints.sizes(), "keypoints");
+
     int maxRadius = torch::round(torch::max(radii)).to(torch::kLong).item().toInt();
     
     
@@ -48,5 +45,6 @@ torch::Tensor keypointsWithGradients(at::Tensor keypoints, at::Tensor gaussGradM
         printf("%s\n",cudaGetErrorString(err));
     }
     cudaDeviceSynchronize();
+    cudaFree(devPitchedPtr.ptr);
     return directionHistogram;
 }

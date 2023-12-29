@@ -5027,5 +5027,5 @@ CMakeFiles/a.out.dir/src/sift_functs.cpp.o: \
  /usr/local/cuda-12.1/include/driver_functions.h \
  /usr/local/cuda-12.1/include/vector_functions.h \
  /usr/local/cuda-12.1/include/vector_functions.hpp \
- /home/atharvmane/cudaTorchSIFT/src/keypoints_with_gradients.h \
+ /home/atharvmane/cudaTorchSIFT/include/keypoints_with_gradients.cuh \
  /usr/local/cuda-12.1/include/math_constants.h
