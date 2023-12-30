@@ -1,1 +1,0 @@
-  -L/lib/intel64  -L/lib/intel64_win  -L"/lib/win-x64"  libkpsCUDA.a  /home/atharvmane/libtorch/lib/libkineto.a -lcudadevrt -lcudart_static -lrt -lpthread -ldl 

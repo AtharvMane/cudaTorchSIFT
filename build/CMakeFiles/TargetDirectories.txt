@@ -1,7 +1,0 @@
-/home/atharvmane/cudaTorchSIFT/build/CMakeFiles/kpsCUDA.dir
-/home/atharvmane/cudaTorchSIFT/build/CMakeFiles/kpsCPU.dir
-/home/atharvmane/cudaTorchSIFT/build/CMakeFiles/siftFuncs.dir
-/home/atharvmane/cudaTorchSIFT/build/CMakeFiles/customTensor.dir
-/home/atharvmane/cudaTorchSIFT/build/CMakeFiles/b.out.dir
-/home/atharvmane/cudaTorchSIFT/build/CMakeFiles/edit_cache.dir
-/home/atharvmane/cudaTorchSIFT/build/CMakeFiles/rebuild_cache.dir

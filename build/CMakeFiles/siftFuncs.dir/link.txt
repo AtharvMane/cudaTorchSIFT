@@ -1,2 +1,0 @@
-/usr/bin/ar qc libsiftFuncs.a CMakeFiles/siftFuncs.dir/src/sift_functs.cpp.o
-/usr/bin/ranlib libsiftFuncs.a
