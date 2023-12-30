@@ -78,5 +78,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/kpsCUDA.dir/DependInfo.cmake"
   "CMakeFiles/kpsCPU.dir/DependInfo.cmake"
   "CMakeFiles/siftFuncs.dir/DependInfo.cmake"
+  "CMakeFiles/customTensor.dir/DependInfo.cmake"
   "CMakeFiles/b.out.dir/DependInfo.cmake"
   )

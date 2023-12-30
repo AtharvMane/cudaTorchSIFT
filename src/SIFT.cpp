@@ -35,7 +35,7 @@ int main(int argc, char*[]){
         starttime = std::chrono::high_resolution_clock::now();
         // img = cv::imread("/home/atharvmane/Pictures/Screenshot from 2023-01-04 02-10-26-new(1).png", cv::IMREAD_UNCHANGED);
 
-        // camera.read(img);
+        camera.read(img);
         torch::Tensor imgTensor = cvImgToTorchTensor(img, device);
         imgTensor = 0.2989 * imgTensor.index({Slice(),2}) + 0.5870 * imgTensor.index({Slice(),1}) + 0.1140 * imgTensor.index({Slice(),0});
         imgTensor = imgTensor.index({Slice(),None});

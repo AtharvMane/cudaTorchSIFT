@@ -156,6 +156,19 @@ siftFuncs/fast:
 .PHONY : siftFuncs/fast
 
 #=============================================================================
+# Target rules for targets named customTensor
+
+# Build rule for target.
+customTensor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 customTensor
+.PHONY : customTensor
+
+# fast build rule for target.
+customTensor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTensor.dir/build.make CMakeFiles/customTensor.dir/build
+.PHONY : customTensor/fast
+
+#=============================================================================
 # Target rules for targets named b.out
 
 # Build rule for target.
@@ -167,6 +180,30 @@ b.out: cmake_check_build_system
 b.out/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/b.out.dir/build.make CMakeFiles/b.out.dir/build
 .PHONY : b.out/fast
+
+src/CustomCudaTensor.o: src/CustomCudaTensor.cu.o
+.PHONY : src/CustomCudaTensor.o
+
+# target to build an object file
+src/CustomCudaTensor.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTensor.dir/build.make CMakeFiles/customTensor.dir/src/CustomCudaTensor.cu.o
+.PHONY : src/CustomCudaTensor.cu.o
+
+src/CustomCudaTensor.i: src/CustomCudaTensor.cu.i
+.PHONY : src/CustomCudaTensor.i
+
+# target to preprocess a source file
+src/CustomCudaTensor.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTensor.dir/build.make CMakeFiles/customTensor.dir/src/CustomCudaTensor.cu.i
+.PHONY : src/CustomCudaTensor.cu.i
+
+src/CustomCudaTensor.s: src/CustomCudaTensor.cu.s
+.PHONY : src/CustomCudaTensor.s
+
+# target to generate assembly for a file
+src/CustomCudaTensor.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTensor.dir/build.make CMakeFiles/customTensor.dir/src/CustomCudaTensor.cu.s
+.PHONY : src/CustomCudaTensor.cu.s
 
 src/SIFT.o: src/SIFT.cpp.o
 .PHONY : src/SIFT.o
@@ -273,9 +310,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... b.out"
+	@echo "... customTensor"
 	@echo "... kpsCPU"
 	@echo "... kpsCUDA"
 	@echo "... siftFuncs"
+	@echo "... src/CustomCudaTensor.o"
+	@echo "... src/CustomCudaTensor.i"
+	@echo "... src/CustomCudaTensor.s"
 	@echo "... src/SIFT.o"
 	@echo "... src/SIFT.i"
 	@echo "... src/SIFT.s"

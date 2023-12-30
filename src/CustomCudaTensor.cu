@@ -13,12 +13,19 @@
 #include <math.h>
 #include <keypoints_with_gradients.cuh>
 
-
-class customCudaTensor{
+template <typename T> class customCudaTensor{
 private:
 std::vector<size_t>shape;
-char* data; 
+T* data;
+std::string device;
 public:
-customCudaTensor(){}
+customCudaTensor<T>(){}
+customCudaTensor<T>(T* dataptr, std::vector<size_t> shape){}
+
+torch::Tensor toTorchTensor(){}
+};
+
+template <typename T> class customCudaTensor <T> fromCVMat(cv::Mat){
 
 };
+template <typename T> class customCudaTensor <T> fromTorchTensor(torch::Tensor){};

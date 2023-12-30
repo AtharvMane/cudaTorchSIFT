@@ -34,6 +34,9 @@ add_library(siftFuncs src/sift_functs.cpp)
 
 target_link_libraries(siftFuncs kpsCPU ${TORCH_LIBRARIES} ${OpenCV_LIBRARIES})
 
+add_library(customTensor STATIC src/CustomCudaTensor.cu)
+target_link_libraries(customTensor ${TORCH_LIBRARIES} ${OpenCV_LIBRARIES})
+
 
 add_executable(b.out src/SIFT.cpp)
 

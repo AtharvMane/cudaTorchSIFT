@@ -66,6 +66,7 @@ CMAKE_BINARY_DIR = /home/atharvmane/cudaTorchSIFT/build
 all: CMakeFiles/kpsCUDA.dir/all
 all: CMakeFiles/kpsCPU.dir/all
 all: CMakeFiles/siftFuncs.dir/all
+all: CMakeFiles/customTensor.dir/all
 all: CMakeFiles/b.out.dir/all
 .PHONY : all
 
@@ -77,6 +78,7 @@ preinstall:
 clean: CMakeFiles/kpsCUDA.dir/clean
 clean: CMakeFiles/kpsCPU.dir/clean
 clean: CMakeFiles/siftFuncs.dir/clean
+clean: CMakeFiles/customTensor.dir/clean
 clean: CMakeFiles/b.out.dir/clean
 .PHONY : clean
 
@@ -87,7 +89,7 @@ clean: CMakeFiles/b.out.dir/clean
 CMakeFiles/kpsCUDA.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kpsCUDA.dir/build.make CMakeFiles/kpsCUDA.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kpsCUDA.dir/build.make CMakeFiles/kpsCUDA.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atharvmane/cudaTorchSIFT/build/CMakeFiles --progress-num=7,8 "Built target kpsCUDA"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atharvmane/cudaTorchSIFT/build/CMakeFiles --progress-num=9,10 "Built target kpsCUDA"
 .PHONY : CMakeFiles/kpsCUDA.dir/all
 
 # Build rule for subdir invocation for target.
@@ -113,7 +115,7 @@ CMakeFiles/kpsCUDA.dir/clean:
 CMakeFiles/kpsCPU.dir/all: CMakeFiles/kpsCUDA.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kpsCPU.dir/build.make CMakeFiles/kpsCPU.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kpsCPU.dir/build.make CMakeFiles/kpsCPU.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atharvmane/cudaTorchSIFT/build/CMakeFiles --progress-num=4,5,6 "Built target kpsCPU"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atharvmane/cudaTorchSIFT/build/CMakeFiles --progress-num=6,7,8 "Built target kpsCPU"
 .PHONY : CMakeFiles/kpsCPU.dir/all
 
 # Build rule for subdir invocation for target.
@@ -140,7 +142,7 @@ CMakeFiles/siftFuncs.dir/all: CMakeFiles/kpsCUDA.dir/all
 CMakeFiles/siftFuncs.dir/all: CMakeFiles/kpsCPU.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/siftFuncs.dir/build.make CMakeFiles/siftFuncs.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/siftFuncs.dir/build.make CMakeFiles/siftFuncs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atharvmane/cudaTorchSIFT/build/CMakeFiles --progress-num=9,10 "Built target siftFuncs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atharvmane/cudaTorchSIFT/build/CMakeFiles --progress-num=11,12 "Built target siftFuncs"
 .PHONY : CMakeFiles/siftFuncs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -158,6 +160,32 @@ siftFuncs: CMakeFiles/siftFuncs.dir/rule
 CMakeFiles/siftFuncs.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/siftFuncs.dir/build.make CMakeFiles/siftFuncs.dir/clean
 .PHONY : CMakeFiles/siftFuncs.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/customTensor.dir
+
+# All Build rule for target.
+CMakeFiles/customTensor.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTensor.dir/build.make CMakeFiles/customTensor.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTensor.dir/build.make CMakeFiles/customTensor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atharvmane/cudaTorchSIFT/build/CMakeFiles --progress-num=4,5 "Built target customTensor"
+.PHONY : CMakeFiles/customTensor.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/customTensor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/atharvmane/cudaTorchSIFT/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/customTensor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/atharvmane/cudaTorchSIFT/build/CMakeFiles 0
+.PHONY : CMakeFiles/customTensor.dir/rule
+
+# Convenience name for target.
+customTensor: CMakeFiles/customTensor.dir/rule
+.PHONY : customTensor
+
+# clean rule for target.
+CMakeFiles/customTensor.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTensor.dir/build.make CMakeFiles/customTensor.dir/clean
+.PHONY : CMakeFiles/customTensor.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/b.out.dir
