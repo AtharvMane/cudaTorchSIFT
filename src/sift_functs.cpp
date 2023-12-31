@@ -43,7 +43,14 @@ cv::Mat tensorToMatGray(torch::Tensor imgTensor, bool normalize){
         auto sizes = dispTensor.sizes();
         cv::Mat dispImg = cv::Mat(sizes[0], sizes[1], CV_64FC1,dispTensor.data_ptr());
         if(normalize){
-            cv::normalize(dispImg, dispImg, torch::min(imgTensor).item().toDouble(), torch::max(imgTensor).item().toDouble(), cv::NORM_MINMAX, CV_64FC1);
+            double max=torch::max(dispTensor).item().toDouble();
+            double min=torch::min(dispTensor).item().toDouble();
+            double siz = max-min;
+            dispTensor = (dispTensor-min)*1/siz;
+            // std::cout<<"min: "<<min<<" max: "<<max<<" siz: "<<siz<<std::endl;
+            cv::Mat dispImg = cv::Mat(sizes[0], sizes[1], CV_64FC1,dispTensor.data_ptr());
+            return dispImg;
+            // cv::normalize(dispImg, dispImg, torch::min(imgTensor).item().toDouble(), torch::max(imgTensor).item().toDouble(), cv::NORM_MINMAX, CV_64FC1);
         }
         return dispImg;
     }else if (imgTensor.dtype()==torch::kBool){
@@ -120,21 +127,34 @@ void batchImshow(torch::Tensor imgBatch, std::string type, bool normalize){
 }
 
 torch::Tensor getInitExtremaLocs(torch::Tensor diffGauss){
+    // batchImshow(diffGauss,"diffGauss", true);
+
     torch::Tensor diffGaussPadded = F::pad(diffGauss.permute({1,0,2,3}), F::PadFuncOptions({1,1,1,1,1,1}).value(__builtin_inff64()));
     torch::Tensor diffGaussMaxes = F::max_pool3d(diffGaussPadded,F::MaxPool3dFuncOptions({3,3,3}).stride(1)).permute({1,0,2,3});
+    // batchImshow(diffGaussMaxes.index({Slice(1,-1),Slice(),Slice(1,-1),Slice(1,-1)}),"diffGaussMaxes", true);
+    // batchImshow((diffGaussMaxes==diffGauss).to(torch::kFloat64),"diffGaussMaxes==", true);
+
     diffGaussPadded = F::pad(-diffGauss.permute({1,0,2,3}), F::PadFuncOptions({1,1,1,1,1,1}).value(__builtin_inff64()));
     torch::Tensor diffGaussMins = F::max_pool3d(diffGaussPadded,F::MaxPool3dFuncOptions({3,3,3}).stride(1)).permute({1,0,2,3});
+    // batchImshow(diffGaussMins.index({Slice(1,-1),Slice(),Slice(1,-1),Slice(1,-1)}),"diffGaussMins", true);
+    // batchImshow((diffGaussMins==(-diffGauss)).to(torch::kFloat64),"diffGaussMins==", true);
+    
     torch::Tensor diffGaussExtremas = ((diffGaussMaxes==diffGauss)+(diffGaussMins==-diffGauss));
+    // batchImshow(diffGaussExtremas.to(torch::kFloat64),"diffGaussExtremas", true);
+
     return torch::stack(torch::where(diffGaussExtremas.index({Slice(),0}))).t();
 }
 
 torch::Tensor getGrads(torch::Tensor input, torch::DeviceType device){
     // std::cout<<"\n\n\n"<<std::endl;
-
+    // coutTensorShape(input.sizes(), "input");
+    // batchImshow(input[0]*10,"input", true);
     torch::Tensor grader3D = torch::tensor({{{{{-0.5,0.0,0.5}}}}},torch::TensorOptions().device(device).dtype(torch::kFloat64));
     torch::Tensor inputPadded = F::pad(input, F::PadFuncOptions({1,1,1,1,1,1}).mode(torch::kReflect));
     torch::Tensor grads = torch::zeros_like(input).repeat({1,3,1,1,1});
-    coutTensorShape( input.sizes(),"input");
+    // coutTensorShape( grader3D.sizes(),"grader3D");
+    // coutTensorShape( inputPadded.sizes(),"inputPadded");
+
 
     grads.index({Slice(),0}) = F::conv3d(inputPadded.index({Slice(),Slice(),Slice(1,-1),Slice(1,-1),Slice()}), grader3D).index({Slice(),0});
     grads.index({Slice(),1}) = F::conv3d(inputPadded.index({Slice(),Slice(),Slice(1,-1),Slice(),Slice(1,-1)}), grader3D.permute({0,1,2,4,3})).index({Slice(),0});
@@ -160,22 +180,25 @@ torch::Tensor getCoordResponses(torch::Tensor coords,torch::Tensor gradients, to
 }
 
 
-torch::Tensor getKeypoints(torch::Tensor diffGauss, int octaveIndex, torch::DeviceType device){
+torch::Tensor getKeypoints(torch::Tensor diffGauss, int octaveIndex, int numIntervals, torch::DeviceType device){
     torch::Tensor diffGaussExtremaLocs = getInitExtremaLocs(diffGauss);
     torch::Tensor grads = getGrads(diffGauss.permute({1,0,2,3}).index({None}),device);
     torch::Tensor doubleGrads = getGrads(grads.permute({1,0,2,3,4}), device);
+    // batchImshow(grads[0],"grads", true);
+    // batchImshow(doubleGrads.index({Slice(),Slice(),1}),"doubleGradsxs", true);
+
     doubleGrads = doubleGrads.permute({2,3,4,0,1});
     grads = grads[0].permute({1,2,3,0});
     torch::Tensor finalDiffGaussExtremaLocs = torch::empty({0,3}, torch::TensorOptions().device(device).dtype(torch::kFloat64));
     int numIter = 10;
-    for(int mnop=0;mnop<2;mnop++){
+    for(int mnop=0;mnop<20;mnop++){
         torch::Tensor doubleGradsSelected = doubleGrads.index({diffGaussExtremaLocs.index({Slice(),0}),diffGaussExtremaLocs.index({Slice(),1}),diffGaussExtremaLocs.index({Slice(),2})});
         torch::Tensor detMask = doubleGradsSelected.det()!=0.0;
         doubleGradsSelected = doubleGradsSelected.index({detMask});
         diffGaussExtremaLocs = diffGaussExtremaLocs.index({detMask});
         torch::Tensor doubleGradsInv = doubleGradsSelected.inverse();
         torch::Tensor gradsSelected = grads.index({diffGaussExtremaLocs.index({Slice(),0}),diffGaussExtremaLocs.index({Slice(),1}),diffGaussExtremaLocs.index({Slice(),2})});
-        torch::Tensor xHats = torch::einsum("nij,nj->ni", {doubleGradsInv, gradsSelected});
+        torch::Tensor xHats = std::get<0>(torch::linalg_lstsq(doubleGradsSelected,gradsSelected));//-torch::einsum("nij,nj->ni", {doubleGradsInv, gradsSelected});
         diffGaussExtremaLocs = xHats + diffGaussExtremaLocs.to(torch::kFloat64);
         torch::Tensor finalMask = (torch::abs(xHats.index({Slice(),0}))<0.5)*(torch::abs(xHats.index({Slice(),1}))<0.5)*(torch::abs(xHats.index({Slice(),2}))<0.5);
         finalDiffGaussExtremaLocs = torch::cat({finalDiffGaussExtremaLocs, diffGaussExtremaLocs.index({finalMask})});
@@ -185,24 +208,24 @@ torch::Tensor getKeypoints(torch::Tensor diffGauss, int octaveIndex, torch::Devi
         // coutTensorShape(finalDiffGaussExtremaLocs.sizes(),"finalDiffGaussExtremaLocs");
     }
     torch::Tensor resp = getCoordResponses(finalDiffGaussExtremaLocs, grads.permute({3,0,1,2}), diffGauss);
-    torch::Tensor l = (torch::abs(resp))>0.05;
+    torch::Tensor l = (torch::abs(resp))*numIntervals>=0.03;
     torch::Tensor ret = finalDiffGaussExtremaLocs.index({l});
     resp = resp.index({l});
     torch::Tensor ret_r=(ret-ret%1).to(torch::kLong);
     torch::Tensor hessian=doubleGrads.index({ret_r.index({Slice(),0}),ret_r.index({Slice(),1}),ret_r.index({Slice(),2}),Slice(1,None),Slice(1,None)});
-    torch::Tensor tracesSqr = torch::square(hessian.index({"...",0,0})+hessian.index({"...",0,0}));
+    torch::Tensor tracesSqr = torch::square(hessian.index({"...",0,0})+hessian.index({"...",1,1}));
     torch::Tensor det=hessian.det();
     torch::Tensor r=((tracesSqr/det)<12.1)*(det>0);
     ret=ret.index({r});
     resp=resp.index({r});
     torch::Tensor octave_info = torch::full(ret.size(0), octaveIndex, torch::TensorOptions().device(device));
     ret=torch::cat({resp.index({Slice(),None}), octave_info.index({Slice(),None}), ret}, 1);
-    // coutTensorShape(ret.sizes(),"ret");
+    coutTensorShape(ret.sizes(),"ret");
     // return ret;
     return ret;
 }
 
-cv::Mat draw_angled_rec(double x0, double y0, double width, double height, double angle, cv::Mat img){
+cv::Mat draw_angled_rec(double x0, double y0, double width, double height, double angle, cv::Mat img, cv::Scalar color){
     width*=2;
     height*=2;
     double _angle = (angle+135) * CUDART_PI_HI/ 180.0;
@@ -215,11 +238,11 @@ cv::Mat draw_angled_rec(double x0, double y0, double width, double height, doubl
     // cv::Point2i pt4 = {(int)(b*(y0+height/2)+a*(x0)), (int)(b*(y0+height/2)-a*(x0))};
     cv::Point2i center = {(int)x0,(int)y0};
 
-    cv::line(img, pt0, pt1, {0, 255, 0}, 1);
-    cv::line(img, pt1, pt2, {0, 255, 0}, 1);
-    cv::line(img, pt2, pt3, {0, 255, 0}, 1);
-    cv::line(img, pt3, pt0, {0, 255, 0}, 1);
-    cv::line(img, center, pt0, {0, 255, 0}, 1);
+    cv::line(img, pt0, pt1, color, 1);
+    cv::line(img, pt1, pt2, color, 1);
+    cv::line(img, pt2, pt3, color, 1);
+    cv::line(img, pt3, pt0, color, 1);
+    cv::line(img, center, pt0, color, 1);
 
 
     return img;
@@ -231,11 +254,21 @@ void showKeypoints(cv::Mat img, torch::Tensor keypoints){
     keypoints = keypoints.cpu();
     cv::Mat imgCopy;
     img.copyTo(imgCopy);
-    torch::Tensor power = torch::exp2(keypoints.index({Slice(),1}).reciprocal());
+    torch::Tensor power = torch::exp2(keypoints.index({Slice(),1}));
     for(int i=0;i<keypoints.size(0);i++){
-        
-        imgCopy = draw_angled_rec(keypoints[i][4].item().toDouble()*power[i].item().toDouble(),keypoints[i][3].item().toDouble()*power[i].item().toDouble(),5*keypoints[i][2].item().toDouble(),5*keypoints[i][2].item().toDouble(), keypoints[i][5].item().toDouble(), imgCopy);
-        // cv::circle(imgCopy, {keypoints[i][4].item().toDouble(),keypoints[i][3].item().toDouble()}, 5*keypoints[i][2].item().toDouble(), {0,255,0}, 1);
+        if(keypoints[i][1].item().toDouble()==0){
+            imgCopy = draw_angled_rec(keypoints[i][4].item().toDouble()*power[i].item().toDouble(),keypoints[i][3].item().toDouble()*power[i].item().toDouble(),5*keypoints[i][2].item().toDouble(),5*keypoints[i][2].item().toDouble(), keypoints[i][5].item().toDouble(), imgCopy, {0,255,0});
+        } else if(keypoints[i][1].item().toDouble()==1){
+            imgCopy = draw_angled_rec(keypoints[i][4].item().toDouble()*power[i].item().toDouble(),keypoints[i][3].item().toDouble()*power[i].item().toDouble(),5*keypoints[i][2].item().toDouble(),5*keypoints[i][2].item().toDouble(), keypoints[i][5].item().toDouble(), imgCopy, {255,0,0});
+        } else if(keypoints[i][1].item().toDouble()==2){
+            imgCopy = draw_angled_rec(keypoints[i][4].item().toDouble()*power[i].item().toDouble(),keypoints[i][3].item().toDouble()*power[i].item().toDouble(),5*keypoints[i][2].item().toDouble(),5*keypoints[i][2].item().toDouble(), keypoints[i][5].item().toDouble(), imgCopy, {0,0,255});
+        }else if(keypoints[i][1].item().toDouble()==3){
+            imgCopy = draw_angled_rec(keypoints[i][4].item().toDouble()*power[i].item().toDouble(),keypoints[i][3].item().toDouble()*power[i].item().toDouble(),5*keypoints[i][2].item().toDouble(),5*keypoints[i][2].item().toDouble(), keypoints[i][5].item().toDouble(), imgCopy, {255,255,0});   
+        }else if(keypoints[i][1].item().toDouble()==4){
+            imgCopy = draw_angled_rec(keypoints[i][4].item().toDouble()*power[i].item().toDouble(),keypoints[i][3].item().toDouble()*power[i].item().toDouble(),5*keypoints[i][2].item().toDouble(),5*keypoints[i][2].item().toDouble(), keypoints[i][5].item().toDouble(), imgCopy, {0,255,255});
+        }else{
+            imgCopy = draw_angled_rec(keypoints[i][4].item().toDouble()*power[i].item().toDouble(),keypoints[i][3].item().toDouble()*power[i].item().toDouble(),5*keypoints[i][2].item().toDouble(),5*keypoints[i][2].item().toDouble(), keypoints[i][5].item().toDouble(), imgCopy, {255,0,255});
+        }
     }
     cv::imshow("keypoints",imgCopy);
     cv::waitKey(100);

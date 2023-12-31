@@ -35,45 +35,49 @@ __global__ void createSingleWeightTile(torch::PackedTensorAccessor64<double,3> g
     }
 }
 
-__global__ void createWeightTiles(int size, cudaPitchedPtr devPitchedPtr, torch::PackedTensorAccessor64<double,2> directionHistogramAccessor, torch::PackedTensorAccessor64<double,1> radiusAccessor, torch::PackedTensorAccessor64<double,2> keypointAccessor, torch::PackedTensorAccessor64<double,3> gradMagsAccessor, torch::PackedTensorAccessor64<int,3> gradDirsAccessor, int xLim, int yLim){
+__global__ void createWeightTiles(int size, cudaPitchedPtr devPitchedPtr, torch::PackedTensorAccessor64<double,2> directionHistogramAccessor, torch::PackedTensorAccessor64<double,1> radiusAccessor, torch::PackedTensorAccessor64<double,2> keypointAccessor, torch::PackedTensorAccessor64<double,3> gradMagsAccessor, torch::PackedTensorAccessor64<int,3> gradDirsAccessor, int xLim, int yLim, size_t numKeypoints){
     cg::grid_group grp = cg::this_grid();
-    
-    uint64_t i = threadIdx.x;
-    double sigmaInv = 2*pow(2/radiusAccessor[0],2);
-    int radius = (int) rintf(radiusAccessor[i]);
-    int blocSize = 4;
-    dim3 blk(blocSize, blocSize);
-    dim3 selectorThreads(radius/2,radius/2);
-    int x = (int) rint(keypointAccessor[i][4]);
-    int y = (int) rint(keypointAccessor[i][3]);
-    int z = (int) rint(keypointAccessor[i][2]);
-    createSingleWeightTile<<<blk, selectorThreads>>>(gradMagsAccessor, devPitchedPtr, i, 2*radius, x, y, z, xLim, yLim, sigmaInv);
-    cudaError_t err = cudaGetLastError();
-    if(err!=cudaSuccess){
-        printf("%s\n",cudaGetErrorString(err));
+    uint64_t i = blockDim.x*blockIdx.x+threadIdx.x;
+    if(i<numKeypoints){
+        double sigmaInv = 2*pow(2/radiusAccessor[0],2);
+        int radius = (int) rintf(radiusAccessor[i]);
+        int blocSize = 4;
+        dim3 blk(blocSize, blocSize);
+        dim3 selectorThreads(radius/2,radius/2);
+        int x = (int) rint(keypointAccessor[i][4]);
+        int y = (int) rint(keypointAccessor[i][3]);
+        int z = (int) rint(keypointAccessor[i][2]);
+        createSingleWeightTile<<<blk, selectorThreads>>>(gradMagsAccessor, devPitchedPtr, i, 2*radius, x, y, z, xLim, yLim, sigmaInv);
+        cudaError_t err = cudaGetLastError();
+        if(err!=cudaSuccess){
+            printf("%s\n",cudaGetErrorString(err));
+        }
     }
 }
 
-__global__ void createHistogram(cudaPitchedPtr devPitchedPtr, torch::PackedTensorAccessor64<double,2> directionHistogramAccessor, torch::PackedTensorAccessor64<double,1> radiusAccessor, torch::PackedTensorAccessor64<double,2> keypointAccessor, torch::PackedTensorAccessor64<double,3> gradMagsAccessor, torch::PackedTensorAccessor64<int,3> gradDirsAccessor){
+__global__ void createHistogram(cudaPitchedPtr devPitchedPtr, torch::PackedTensorAccessor64<double,2> directionHistogramAccessor, torch::PackedTensorAccessor64<double,1> radiusAccessor, torch::PackedTensorAccessor64<double,2> keypointAccessor, torch::PackedTensorAccessor64<double,3> gradMagsAccessor, torch::PackedTensorAccessor64<int,3> gradDirsAccessor, size_t numKeypoints){
     int idx = blockDim.x*blockIdx.x+threadIdx.x;
-    int radius = radiusAccessor[idx];
-    void* weightPtr = devPitchedPtr.ptr;
-    size_t pitch = devPitchedPtr.pitch;
-    size_t slicePitch = pitch*2*radius;
-    char* plane = (char*) weightPtr + idx * slicePitch;
-    int x = (int) rint(keypointAccessor[idx][4]);
-    int y = (int) rint(keypointAccessor[idx][3]);
-    int z = (int) rint(keypointAccessor[idx][2]);
 
-    for(int n=0;n<2*radius;n++){
-        double* row = (double*) (plane + n*pitch);
-        for(int m=0;m<2*radius;m++){
-            if(gradDirsAccessor[z][y+n-radius][x+m-radius]>36 || gradDirsAccessor[z][y+n-radius][x+m-radius]<0){
-                printf("Needed idx: %d",gradDirsAccessor[z][y+n-radius][x+m-radius]);
+    if(idx<numKeypoints){
+        int radius = radiusAccessor[idx];
+        void* weightPtr = devPitchedPtr.ptr;
+        size_t pitch = devPitchedPtr.pitch;
+        size_t slicePitch = pitch*2*radius;
+        char* plane = (char*) weightPtr + idx * slicePitch;
+        int x = (int) rint(keypointAccessor[idx][4]);
+        int y = (int) rint(keypointAccessor[idx][3]);
+        int z = (int) rint(keypointAccessor[idx][2]);
+
+        for(int n=0;n<2*radius;n++){
+            double* row = (double*) (plane + n*pitch);
+            for(int m=0;m<2*radius;m++){
+                if(gradDirsAccessor[z][y+n-radius][x+m-radius]>36 || gradDirsAccessor[z][y+n-radius][x+m-radius]<0){
+                    printf("Needed idx: %d",gradDirsAccessor[z][y+n-radius][x+m-radius]);
+                }
+                // directionHistogramAccessor[idx][gradDirsAccessor[z][y+n-radius][x+m-radius]]=1;
+                // gradDirsAccessor[z][y+n-radius][x+m-radius]=10;
+                directionHistogramAccessor[idx][gradDirsAccessor[z][y+n-radius][x+m-radius]] += row[m];
             }
-            // directionHistogramAccessor[idx][gradDirsAccessor[z][y+n-radius][x+m-radius]]=1;
-            // gradDirsAccessor[z][y+n-radius][x+m-radius]=10;
-            directionHistogramAccessor[idx][gradDirsAccessor[z][y+n-radius][x+m-radius]] += row[m];
         }
     }
 }

@@ -28,6 +28,7 @@ int main(int argc, char*[]){
     std::chrono::time_point<std::chrono::high_resolution_clock> starttime,endtime;
     // torch::Tensor keypoints = torch::empty({0,5}, torch::TensorOptions().device(device).dtype(torch::kFloat64));
     torch::Tensor grader2D = torch::tensor({{{{0.,0.,0.},{-0.5,0.,0.5},{0.,0.,0.}}},{{{0.,-0.5,0.},{0.,0.,0.},{0.,0.5,0.}}}}, torch::TensorOptions().device(device).dtype(torch::kFloat64));
+    std::cout<<"sigmas: "<<gaussSigmas<<" gaussKernelSize: "<<gaussKernelSize<<std::endl;
 
     while(true){
         torch::Tensor keypointGradients = torch::empty({0,6}, torch::TensorOptions().device(device).dtype(torch::kFloat64));
@@ -54,8 +55,14 @@ int main(int argc, char*[]){
         for(int i = 0; i<numOctaves; i++){
             imgTensor = F::pad(inputImgPyramid[i], F::PadFuncOptions({gaussHalf,gaussHalf,gaussHalf,gaussHalf}).mode(torch::enumtype::kReflect()));
             gaussianPyramid.push_back(F::conv2d(imgTensor, gaussianKernels).permute({1,0,2,3}));
+            // batchImshow(gaussianPyramid[i],"gaussPyr",false);
+            // for(int m=1;m<gaussianPyramid[i].size(0);m++){
+            //     batchImshow((gaussianPyramid[i][m]-gaussianPyramid[i][m-1]).index({None,"..."}),"diffgaussPyr",true);
+            // }
+
             diffGaussianPyramid.push_back((gaussianPyramid[i].index({Slice(0,-1),"..."}))-(gaussianPyramid[i].index({Slice(1,None),"..."})));            
-            torch::Tensor keypoints = getKeypoints(diffGaussianPyramid[i], i, device);
+            torch::Tensor keypoints = getKeypoints(diffGaussianPyramid[i], i, 1, device);
+            // std::cout<<keypoints<<std::endl;
             if(keypoints.size(0)==0){
                 break;
             }
@@ -70,12 +77,15 @@ int main(int argc, char*[]){
             directionMask = ((0.8*directionMask).repeat({1,directionHistogram.size(1)})<directionHistogram);
             std::vector<torch::Tensor> direcs=torch::where(directionMask);
             torch::Tensor keypointsWithGradientsTensor = keypoints.index({direcs[0]});
-
+            // coutTensorShape(keypointsWithGradientsTensor.sizes(),"keypointsWithGradientsTensor");
             keypointsWithGradientsTensor = torch::cat({keypointsWithGradientsTensor,direcs[1].index({Slice(),None})*10},1);
-            coutTensorShape(keypointGradients.sizes(),"full");
-            coutTensorShape(keypointsWithGradientsTensor.sizes(),"partial");
+            // std::cout<<keypointsWithGradientsTensor<<std::endl;
+            
+            // coutTensorShape(keypointGradients.sizes(),"full");
+            // coutTensorShape(keypointsWithGradientsTensor.sizes(),"partial");
 
             keypointGradients = torch::cat({keypointGradients,keypointsWithGradientsTensor});
+            // std::cout<<keypointGradients<<std::endl;
             // keypointGradients = torch::cat({keypointGradients,direcs[0].index({Slice(),None})});
  
         }
@@ -101,7 +111,7 @@ int main(int argc, char*[]){
         std::cout<<"runtime: "<<(et-st)/1000000000.0<<" fps: "<<1000000000.0/(et-st)<<std::endl;
         c10::cuda::CUDACachingAllocator::emptyCache();
         showKeypoints(img, keypointGradients);
-
+        // cv::waitKey(100000);
         // for(int i=0;i<numOctaves;i++){
         //     batchImshow(diffGaussianPyramid[i]*10, "impPyr", true);
         // }

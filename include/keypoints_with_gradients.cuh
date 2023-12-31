@@ -37,14 +37,14 @@ torch::Tensor getImageBoundMask(torch::Tensor ls, torch::Tensor dogs);
 
 torch::Tensor getCoordResponses(torch::Tensor coords,torch::Tensor gradients, torch::Tensor dogs);
 
-torch::Tensor getKeypoints(torch::Tensor diffGauss, int octaveIndex, torch::DeviceType device);
+torch::Tensor getKeypoints(torch::Tensor diffGauss, int octaveIndex, int numIntervals, torch::DeviceType device);
 
 void showKeypoints(cv::Mat img, torch::Tensor keypoints);
 
-cv::Mat draw_angled_rec(double x0, double y0, double width, double height, double angle, cv::Mat img);
+cv::Mat draw_angled_rec(double x0, double y0, double width, double height, double angle, cv::Mat img, cv::Scalar color);
 
 torch::Tensor keypointsWithGradientsAndDescriptors(at::Tensor keypoints, at::Tensor gaussGradMags, at::Tensor gaussGradDirs, int granularity, double initialSigma, double scaleFactor, int numIntervals);
 
-__global__ void createWeightTiles(int size, cudaPitchedPtr devPitchedPtr, torch::PackedTensorAccessor64<double,2> directionHistogramAccessor, torch::PackedTensorAccessor64<double,1> radiusAccessor, torch::PackedTensorAccessor64<double,2> keypointAccessor, torch::PackedTensorAccessor64<double,3> gradMagsAccessor, torch::PackedTensorAccessor64<int,3> gradDirsAccessor, int xLim, int yLim);
+__global__ void createWeightTiles(int size, cudaPitchedPtr devPitchedPtr, torch::PackedTensorAccessor64<double,2> directionHistogramAccessor, torch::PackedTensorAccessor64<double,1> radiusAccessor, torch::PackedTensorAccessor64<double,2> keypointAccessor, torch::PackedTensorAccessor64<double,3> gradMagsAccessor, torch::PackedTensorAccessor64<int,3> gradDirsAccessor, int xLim, int yLim, size_t numKeypoints);
 
-__global__ void createHistogram(cudaPitchedPtr devPitchedPtr, torch::PackedTensorAccessor64<double,2> directionHistogramAccessor, torch::PackedTensorAccessor64<double,1> radiusAccessor, torch::PackedTensorAccessor64<double,2> keypointAccessor, torch::PackedTensorAccessor64<double,3> gradMagsAccessor, torch::PackedTensorAccessor64<int,3> gradDirsAccessor);
+__global__ void createHistogram(cudaPitchedPtr devPitchedPtr, torch::PackedTensorAccessor64<double,2> directionHistogramAccessor, torch::PackedTensorAccessor64<double,1> radiusAccessor, torch::PackedTensorAccessor64<double,2> keypointAccessor, torch::PackedTensorAccessor64<double,3> gradMagsAccessor, torch::PackedTensorAccessor64<int,3> gradDirsAccessor, size_t numKeypoints);

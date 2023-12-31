@@ -15,10 +15,15 @@ The project is still in development phase and thus very unstable. The keypoint d
 The Author provides no warranty of work.
 
 ## Development Plans
-- [ ] Check errors in the detector to increase repeatability of keypoints.
+- [x] Check errors in the detector to increase repeatability of keypoints.
 - [ ] Implement a custom GPU Tensor for for increased control over data and operations.
 
 ## Custom Tensor Baseline
 - [ ] Write converters to convert to and from torch::Tensor and cv::Mat for contiuous development.
 - [ ] Replicate optimum indexing, permuting, reshaping and Slicing like torch::Tensor.
 - [ ] Write functions like convolution for optimal GPU Execution.
+
+## Immediate tasks
+- [ ] Code refactoring and cleanup
+- [ ] Write a parallel vector deletion code.
+- [ ] Write a parallel conditional memory copy code for the custom tensor.

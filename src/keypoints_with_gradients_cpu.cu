@@ -33,13 +33,13 @@ torch::Tensor keypointsWithGradientsAndDescriptors(at::Tensor keypoints, at::Ten
     torch::PackedTensorAccessor64<double,3> gradMagsAccessor = gaussGradMags.packed_accessor64<double,3>();
     torch::PackedTensorAccessor64<int,3> gradDirsAccessor = gaussGradDirs.packed_accessor64<int,3>(); 
     cudaDeviceSynchronize();
-    createWeightTiles<<<1, keypoints.size(0)>>>(keypoints.size(0), devPitchedPtr, directionHistogramAccessor, radiusAccessor, keypointAccessor, gradMagsAccessor, gradDirsAccessor, gaussGradMags.size(2),gaussGradMags.size(1));
+    createWeightTiles<<<2, (keypoints.size(0)+1)/2>>>(keypoints.size(0), devPitchedPtr, directionHistogramAccessor, radiusAccessor, keypointAccessor, gradMagsAccessor, gradDirsAccessor, gaussGradMags.size(2),gaussGradMags.size(1), keypoints.size(0));
     cudaError_t err = cudaGetLastError();
     if(err!=cudaSuccess){
         printf("%s\n",cudaGetErrorString(err));
     }
     cudaDeviceSynchronize();
-    createHistogram<<<1, keypoints.size(0)>>>(devPitchedPtr, directionHistogramAccessor, radiusAccessor, keypointAccessor, gradMagsAccessor, gradDirsAccessor);
+    createHistogram<<<2, (keypoints.size(0)+1)/2>>>(devPitchedPtr, directionHistogramAccessor, radiusAccessor, keypointAccessor, gradMagsAccessor, gradDirsAccessor, keypoints.size(0));
     err = cudaGetLastError();
     if(err!=cudaSuccess){
         printf("%s\n",cudaGetErrorString(err));
