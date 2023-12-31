@@ -24,6 +24,7 @@ The Author provides no warranty of work.
 - [ ] Write functions like convolution for optimal GPU Execution.
 
 ## Immediate tasks
+- [ ] Add code for SIFT descriptor.
 - [ ] Code refactoring and cleanup
 - [ ] Write a parallel vector deletion code.
 - [ ] Write a parallel conditional memory copy code for the custom tensor.
